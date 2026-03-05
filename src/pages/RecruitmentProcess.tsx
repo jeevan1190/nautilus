@@ -20,7 +20,7 @@ const RecruitmentProcess = () => {
     return (
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
-            <main className="flex-grow pt-20 lg:pt-24">
+            <main className="flex-grow">
                 <header className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
                     <motion.div
                         initial={{ scale: 1.1, filter: "brightness(0.3)" }}
@@ -95,6 +95,40 @@ const RecruitmentProcess = () => {
                 <div className="bg-surface/30">
                     <RecruitmentProcessSection />
                 </div>
+
+                {/* Professional Imagery Section */}
+                <section className="py-16 bg-background relative z-10 w-full px-6 md:px-10 lg:px-20 xl:px-24">
+                    <div className="grid md:grid-cols-2 gap-8 items-center justify-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
+                            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200"
+                                alt="Professional Contract Review"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            />
+                            <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
+                                alt="Executive Contract Signing"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            />
+                            <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
+                        </motion.div>
+                    </div>
+                </section>
 
                 <div className="bg-background">
                     <WhyUsSection />

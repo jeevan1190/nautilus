@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-navy pt-20 pb-12 overflow-hidden text-white/90">
+    <footer className="relative bg-navy pt-16 pb-10 overflow-hidden text-white/90">
       {/* Decorative High-End Elements */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gold/[0.03] rounded-full blur-[120px] pointer-events-none" />
@@ -38,17 +38,17 @@ const Footer = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16 border-b border-white/5 pb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 border-b border-white/5 pb-10"
         >
           {/* Brand Column */}
-          <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-8">
+          <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-6">
             <Link to="/" className="inline-block group transition-transform hover:scale-[1.01]">
-              <h3 className="text-3xl md:text-4xl font-display font-bold leading-tight tracking-tighter">
+              <h3 className="text-2xl md:text-3xl font-display font-bold leading-tight tracking-tighter">
                 Nautilus <br />
                 <span className="text-gold italic">International</span>
               </h3>
             </Link>
-            <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed italic max-w-sm">
+            <p className="text-white/60 text-sm md:text-base font-light leading-relaxed italic max-w-sm">
               "A strategic architecture of recruitment, engineered to build the world's most dynamic executive teams."
             </p>
             <div className="flex gap-4 pt-4">
@@ -69,9 +69,9 @@ const Footer = () => {
           </motion.div>
 
           {/* Global Navigation */}
-          <motion.div variants={fadeInUp} className="space-y-8">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-gold/80">Navigation</h4>
-            <ul className="space-y-4">
+          <motion.div variants={fadeInUp} className="space-y-6">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Navigation</h4>
+            <ul className="space-y-3">
               {[
                 { label: "Home", path: "/" },
                 { label: "About", path: "/about" },
@@ -81,8 +81,8 @@ const Footer = () => {
                 { label: "Contact Us", path: "/contact" }
               ].map(link => (
                 <li key={link.label}>
-                  <Link to={link.path} className="text-lg md:text-xl font-light text-white/70 hover:text-gold hover:translate-x-2 transition-all flex items-center gap-3 group">
-                    <ArrowUpRight size={18} className="text-gold/20 group-hover:text-gold transition-colors" />
+                  <Link to={link.path} className="text-sm md:text-base font-light text-white/70 hover:text-gold hover:translate-x-2 transition-all flex items-center gap-2 group">
+                    <ArrowUpRight size={14} className="text-gold/20 group-hover:text-gold transition-colors" />
                     {link.label}
                   </Link>
                 </li>
@@ -91,9 +91,9 @@ const Footer = () => {
           </motion.div>
 
           {/* Sector Expertise */}
-          <motion.div variants={fadeInUp} className="space-y-8">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-gold/80">Expertise</h4>
-            <ul className="space-y-5 text-lg md:text-xl font-light text-white/70">
+          <motion.div variants={fadeInUp} className="space-y-6">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Expertise</h4>
+            <ul className="space-y-4 text-sm md:text-base font-light text-white/70">
               {[
                 "Strategic IT Sourcing",
                 "Advanced Engineering",
@@ -109,22 +109,22 @@ const Footer = () => {
           </motion.div>
 
           {/* Reach Out - Adjust sizing for contact page redundancy */}
-          <motion.div variants={fadeInUp} className={`space-y-8 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
-            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-gold/80">Global Reach</h4>
-            <div className="space-y-6">
+          <motion.div variants={fadeInUp} className={`space-y-6 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Global Reach</h4>
+            <div className="space-y-5">
               <div className="flex gap-4 items-start group">
-                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <MapPin size={20} className="text-gold" />
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <MapPin size={18} className="text-gold" />
                 </div>
-                <p className="text-lg md:text-xl font-light leading-relaxed text-white/70">
+                <p className="text-sm md:text-base font-light leading-relaxed text-white/70">
                   Pune, Maharashtra, <br />India – 411062
                 </p>
               </div>
               <div className="flex gap-4 items-center group">
-                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Phone size={20} className="text-gold" />
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <Phone size={18} className="text-gold" />
                 </div>
-                <a href="tel:+917410775779" className="text-lg md:text-xl font-light text-white/70 hover:text-gold transition-colors">
+                <a href="tel:+917410775779" className="text-sm md:text-base font-light text-white/70 hover:text-gold transition-colors">
                   +91 7410775779
                 </a>
               </div>

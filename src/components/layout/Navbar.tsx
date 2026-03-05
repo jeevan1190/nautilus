@@ -44,13 +44,13 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-20">
-            <ul className="flex items-center gap-16">
+          <div className="hidden lg:flex items-center gap-10">
+            <ul className="flex items-center gap-6">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className={`relative text-base xl:text-lg tracking-normal uppercase font-bold transition-all duration-300 py-2 px-4 group ${isActive(item.href)
+                    className={`relative text-base xl:text-lg tracking-normal uppercase font-bold transition-all duration-300 py-2 px-2 group ${isActive(item.href)
                       ? "text-gold"
                       : "text-primary-foreground hover:text-gold"
                       }`}
@@ -63,7 +63,7 @@ const Navbar = () => {
             </ul>
             <Link
               to="/contact"
-              className="gradient-gold text-white px-10 py-4 rounded-sm text-base xl:text-lg font-bold tracking-wide hover:shadow-[0_0_25px_rgba(202,138,4,0.4)] hover:scale-105 transition-all shadow-xl"
+              className="gradient-gold text-white px-8 py-4 rounded-sm text-base xl:text-lg font-bold tracking-wide hover:shadow-[0_0_25px_rgba(202,138,4,0.4)] hover:scale-105 transition-all shadow-xl"
             >
               CONTACT US
             </Link>

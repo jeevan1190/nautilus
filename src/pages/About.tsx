@@ -14,7 +14,7 @@ const About = () => {
     return (
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
-            <main className="flex-grow pt-20 lg:pt-24">
+            <main className="flex-grow">
                 <header className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden font-display">
                     <motion.div
                         initial={{ scale: 1.1 }}

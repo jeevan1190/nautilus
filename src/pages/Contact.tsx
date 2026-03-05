@@ -61,7 +61,7 @@ const Contact = () => {
     return (
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
-            <main className="flex-grow pt-20 lg:pt-24">
+            <main className="flex-grow">
                 {/* Cinematic Header */}
                 <header className="relative h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
                     <motion.div
@@ -275,73 +275,73 @@ const Contact = () => {
                                     transition={{ duration: 0.8 }}
                                     className="lg:col-span-7"
                                 >
-                                    <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-14 lg:p-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.12)] relative overflow-hidden border border-navy/5 h-full">
+                                    <div className="bg-white rounded-[2rem] p-6 md:p-10 lg:p-12 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.1)] relative overflow-hidden border border-navy/5 h-full">
                                         <div className="absolute top-0 right-0 w-96 h-96 bg-navy/[0.02] rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
 
                                         <div className="relative z-10">
-                                            <h3 className="text-4xl md:text-6xl font-display font-bold text-navy mb-4">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
-                                            <p className="text-navy/60 text-base md:text-xl font-light mb-12 max-w-2xl leading-relaxed">
+                                            <h3 className="text-3xl md:text-4xl font-display font-bold text-navy mb-3">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
+                                            <p className="text-navy/60 text-sm md:text-base font-light mb-8 max-w-2xl leading-relaxed">
                                                 Initiate your bespoke engagement. Please provide your high-level details for a confidential executive consultation.
                                             </p>
 
-                                            <form onSubmit={handleSubmit} className="space-y-8">
-                                                <div className="grid md:grid-cols-2 gap-8">
-                                                    <div className="space-y-3">
-                                                        <label className="text-[11px] md:text-[12px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Full Name</label>
+                                            <form onSubmit={handleSubmit} className="space-y-6">
+                                                <div className="grid md:grid-cols-2 gap-6">
+                                                    <div className="space-y-2">
+                                                        <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Full Name</label>
                                                         <input
                                                             type="text" name="name" required placeholder="Legal Name" value={form.name} onChange={handleChange}
-                                                            className="w-full bg-surface/50 border border-navy/10 rounded-2xl py-5 px-6 text-lg md:text-xl text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
+                                                            className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
                                                         />
                                                     </div>
-                                                    <div className="space-y-3">
-                                                        <label className="text-[11px] md:text-[12px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Digital Reach</label>
+                                                    <div className="space-y-2">
+                                                        <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Digital Reach</label>
                                                         <input
                                                             type="email" name="email" required placeholder="name@organization.com" value={form.email} onChange={handleChange}
-                                                            className="w-full bg-surface/50 border border-navy/10 rounded-2xl py-5 px-6 text-lg md:text-xl text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
+                                                            className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
                                                         />
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-3">
-                                                    <label className="text-[11px] md:text-[12px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Direct Pipeline (Phone)</label>
+                                                <div className="space-y-2">
+                                                    <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Direct Pipeline (Phone)</label>
                                                     <input
                                                         type="tel" name="phone" placeholder="+00 000 000 0000" value={form.phone} onChange={handleChange}
-                                                        className="w-full bg-surface/50 border border-navy/10 rounded-2xl py-5 px-6 text-lg md:text-xl text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
+                                                        className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
                                                     />
                                                 </div>
 
-                                                <div className="space-y-4">
-                                                    <label className="text-[11px] md:text-[12px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Executive Portfolio (Optional Upload)</label>
+                                                <div className="space-y-3">
+                                                    <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Executive Portfolio (Optional Upload)</label>
                                                     <div className="relative group/file">
                                                         <input
                                                             type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange}
                                                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                                                         />
-                                                        <div className="w-full rounded-2xl border-2 border-dashed border-navy/10 group-hover/file:border-gold/50 group-hover/file:bg-gold/5 bg-surface/30 p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-4 transition-all duration-500">
-                                                            <Upload className={fileName ? "text-gold" : "text-navy/20"} size={36} />
-                                                            <span className={`text-lg md:text-xl tracking-wide text-center md:text-left ${fileName ? "text-navy font-bold" : "text-navy/40 font-light"}`}>
+                                                        <div className="w-full rounded-xl border-2 border-dashed border-navy/10 group-hover/file:border-gold/50 group-hover/file:bg-gold/5 bg-surface/30 p-4 md:p-6 flex flex-col md:flex-row items-center justify-center gap-3 transition-all duration-500">
+                                                            <Upload className={fileName ? "text-gold" : "text-navy/20"} size={28} />
+                                                            <span className={`text-sm md:text-base tracking-wide text-center md:text-left ${fileName ? "text-navy font-bold" : "text-navy/40 font-light"}`}>
                                                                 {fileName || "Drag portfolio here or click to browse"}
                                                             </span>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-3">
-                                                    <label className="text-[11px] md:text-[12px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Strategic Intent</label>
+                                                <div className="space-y-2">
+                                                    <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Strategic Intent</label>
                                                     <textarea
-                                                        name="message" rows={4} placeholder="Briefly describe your objectives..." value={form.message} onChange={handleChange}
-                                                        className="w-full bg-surface/50 border border-navy/10 rounded-2xl py-5 px-6 text-lg md:text-xl text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all resize-none"
+                                                        name="message" rows={3} placeholder="Briefly describe your objectives..." value={form.message} onChange={handleChange}
+                                                        className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all resize-none"
                                                     />
                                                 </div>
 
                                                 <motion.button
-                                                    whileHover={{ y: -5 }}
+                                                    whileHover={{ y: -3 }}
                                                     whileTap={{ scale: 0.98 }}
                                                     type="submit"
-                                                    className="w-full group relative h-20 md:h-24 rounded-2xl bg-navy text-gold font-bold tracking-[0.4em] text-base md:text-lg shadow-2xl overflow-hidden transition-all"
+                                                    className="w-full group relative h-14 md:h-16 rounded-xl bg-navy text-gold font-bold tracking-[0.4em] text-sm md:text-base shadow-xl overflow-hidden transition-all"
                                                 >
-                                                    <div className="relative z-10 flex items-center justify-center gap-5">
-                                                        INITIATE TRANSMISSION <Send size={24} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                                                    <div className="relative z-10 flex items-center justify-center gap-3">
+                                                        INITIATE TRANSMISSION <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />
                                                     </div>
                                                     <div className="absolute inset-0 bg-gold/10 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
                                                 </motion.button>
