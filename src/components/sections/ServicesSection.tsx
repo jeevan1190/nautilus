@@ -117,7 +117,7 @@ const ServicesSection = () => {
         >
           <div className="max-w-4xl text-center md:text-left">
             <p className="text-teal font-bold tracking-[0.3em] uppercase text-xs mb-3">Our Expertise</p>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-[1.1]">
               Specialized Solutions for <br />
               <span className="text-gradient-gold italic">Global Growth</span>
             </h2>

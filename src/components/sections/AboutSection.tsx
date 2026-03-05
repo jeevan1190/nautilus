@@ -154,11 +154,11 @@ const AboutSection = () => {
                 <div className="w-12 h-[2px] bg-gold" />
                 <p className="text-gold font-bold tracking-[0.3em] uppercase text-xs">Our Heritage</p>
               </motion.div>
-              <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-8 leading-[1.1]">
+              <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6 leading-[1.1]">
                 Nautilus International <br />
                 <span className="text-gradient-gold italic">Catalysts for Global Success</span>
               </motion.h2>
-              <motion.div variants={fadeInUp} className="space-y-6 text-foreground/70 text-xl leading-relaxed font-normal">
+              <motion.div variants={fadeInUp} className="space-y-4 text-foreground/70 text-sm md:text-base leading-relaxed font-normal">
                 <p>
                   At <span className="text-foreground font-semibold">Nautilus International</span>, we understand that innovation thrives through collaboration and the collective
                   power of people. Your goal is to challenge the status quo, pioneer new solutions, and propel industries into
@@ -173,7 +173,7 @@ const AboutSection = () => {
               <motion.div variants={fadeInUp} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-border/50">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center lg:text-left">
-                    <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-1 tracking-tight">
+                    <p className="text-2xl md:text-3xl font-bold text-navy mb-1 tracking-tight">
                       <Counter value={stat.value} suffix={stat.suffix} />
                     </p>
                     <p className="text-navy/50 text-xs uppercase font-bold tracking-[0.2em]">{stat.label}</p>

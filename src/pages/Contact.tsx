@@ -93,7 +93,7 @@ const Contact = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-display font-bold text-white mb-8 tracking-tight leading-tight py-2"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight leading-tight py-1"
                         >
                             Our <span className="text-gradient-gold italic">Global Office</span>
                         </motion.h1>
@@ -101,7 +101,7 @@ const Contact = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6, duration: 1 }}
-                            className="text-white/60 max-w-2xl mx-auto text-base md:text-xl font-light leading-relaxed px-4 text-pretty"
+                            className="text-white/60 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed px-4 text-pretty"
                         >
                             Ready to architect your organization's most critical transitions? Experience a new echelon of strategic engagement.
                         </motion.p>
@@ -110,7 +110,7 @@ const Contact = () => {
                     <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10" />
                 </header>
 
-                <section id="pathways" className="relative pt-12 pb-24 md:pb-32 px-6">
+                <section id="pathways" className="relative pt-8 pb-8 px-6">
                     <div className="max-w-[1400px] mx-auto">
                         <motion.div
                             initial="hidden"
@@ -146,7 +146,7 @@ const Contact = () => {
                                     key={idx}
                                     variants={fadeInUp}
                                     whileHover={{ y: -10 }}
-                                    className="group relative bg-white rounded-[2.5rem] p-10 xl:p-12 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-navy/5 overflow-hidden transition-all duration-500"
+                                    className="group relative bg-white rounded-2xl p-6 xl:p-8 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.07)] border border-navy/5 overflow-hidden transition-all duration-500"
                                 >
                                     <div className={`absolute top-0 right-0 w-32 h-32 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-700 bg-${path.color} rounded-full -mr-16 -mt-16`} />
 
@@ -154,10 +154,10 @@ const Contact = () => {
                                         <span className="text-[10px] xl:text-[11px] font-black tracking-[0.4em] text-navy/30 uppercase mb-4 block">
                                             {path.label}
                                         </span>
-                                        <div className="w-14 h-14 rounded-2xl bg-surface flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-navy group-hover:text-gold transition-all duration-500 shadow-sm">
+                                        <div className="w-10 h-10 rounded-xl bg-surface flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-navy group-hover:text-gold transition-all duration-500 shadow-sm">
                                             <path.icon size={28} />
                                         </div>
-                                        <h3 className="text-2xl xl:text-3xl font-display font-bold text-navy mb-4 leading-tight">
+                                        <h3 className="text-xl xl:text-2xl font-display font-bold text-navy mb-2 leading-tight">
                                             {path.title}
                                         </h3>
                                         <p className="text-navy/60 text-sm xl:text-base font-light leading-relaxed">
@@ -173,7 +173,7 @@ const Contact = () => {
                     </div>
                 </section>
 
-                <section id="contact-interface" className="relative pb-24 z-20">
+                <section id="contact-interface" className="relative pb-10 z-20">
                     <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
                         <div className="max-w-[1400px] mx-auto">
                             <div className="grid lg:grid-cols-12 gap-8 xl:gap-12 items-start">
@@ -188,15 +188,15 @@ const Contact = () => {
                                 >
                                     <motion.div
                                         variants={fadeInUp}
-                                        className="gradient-navy rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden group border border-white/5"
+                                        className="gradient-navy rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden group border border-white/5"
                                     >
                                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
 
-                                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-10 leading-tight">
+                                        <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-5 leading-tight">
                                             The <span className="text-gold italic">Nautilus</span> HQ
                                         </h2>
 
-                                        <div className="space-y-10">
+                                        <div className="space-y-5">
                                             {[
                                                 {
                                                     icon: MapPin,
@@ -219,18 +219,18 @@ const Contact = () => {
                                                     href: "mailto:hr@nautilusinternational.in"
                                                 }
                                             ].map((item, id) => (
-                                                <div key={id} className="flex gap-6 md:gap-8 group/item">
-                                                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover/item:bg-gold group-hover/item:text-navy transition-all duration-500 shadow-lg">
+                                                <div key={id} className="flex gap-4 md:gap-5 group/item">
+                                                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover/item:bg-gold group-hover/item:text-navy transition-all duration-500 shadow-lg">
                                                         <item.icon size={24} className="group-hover/item:scale-110 transition-transform" />
                                                     </div>
                                                     <div>
                                                         <span className="text-[10px] md:text-[11px] font-black tracking-[0.3em] text-white/30 mb-2 block uppercase">{item.label}</span>
                                                         {item.isLink ? (
-                                                            <a href={item.href} className="text-lg md:text-2xl font-medium text-white hover:text-gold transition-colors block">
+                                                            <a href={item.href} className="text-sm md:text-base font-medium text-white hover:text-gold transition-colors block">
                                                                 {item.value}
                                                             </a>
                                                         ) : (
-                                                            <div className="text-lg md:text-2xl font-medium text-white leading-snug">
+                                                            <div className="text-sm md:text-base font-medium text-white leading-snug">
                                                                 {item.value}
                                                                 {item.detail && <p className="text-sm md:text-base font-light text-white/40 mt-1 italic">"{item.detail}"</p>}
                                                             </div>
@@ -240,7 +240,7 @@ const Contact = () => {
                                             ))}
                                         </div>
 
-                                        <div className="mt-12 pt-8 border-t border-white/5">
+                                        <div className="mt-6 pt-5 border-t border-white/5">
                                             <div className="flex items-center gap-4 text-white/30 text-xs md:text-sm font-light italic">
                                                 <Clock size={16} />
                                                 <span>Global Operations: 24/7 Strategic Support</span>
@@ -275,75 +275,75 @@ const Contact = () => {
                                     transition={{ duration: 0.8 }}
                                     className="lg:col-span-7"
                                 >
-                                    <div className="bg-white rounded-[2rem] p-6 md:p-10 lg:p-12 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.1)] relative overflow-hidden border border-navy/5 h-full">
+                                    <div className="bg-white rounded-2xl p-5 md:p-8 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] relative overflow-hidden border border-navy/5">
                                         <div className="absolute top-0 right-0 w-96 h-96 bg-navy/[0.02] rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
 
                                         <div className="relative z-10">
-                                            <h3 className="text-3xl md:text-4xl font-display font-bold text-navy mb-3">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
-                                            <p className="text-navy/60 text-sm md:text-base font-light mb-8 max-w-2xl leading-relaxed">
-                                                Initiate your bespoke engagement. Please provide your high-level details for a confidential executive consultation.
+                                            <h3 className="text-xl md:text-2xl font-display font-bold text-navy mb-2">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
+                                            <p className="text-navy/60 text-xs md:text-sm font-light mb-5 leading-relaxed">
+                                                Provide your details for a confidential executive consultation.
                                             </p>
 
-                                            <form onSubmit={handleSubmit} className="space-y-6">
-                                                <div className="grid md:grid-cols-2 gap-6">
-                                                    <div className="space-y-2">
-                                                        <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Full Name</label>
+                                            <form onSubmit={handleSubmit} className="space-y-4">
+                                                <div className="grid md:grid-cols-2 gap-4">
+                                                    <div className="space-y-1">
+                                                        <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Full Name</label>
                                                         <input
                                                             type="text" name="name" required placeholder="Legal Name" value={form.name} onChange={handleChange}
-                                                            className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
+                                                            className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all"
                                                         />
                                                     </div>
-                                                    <div className="space-y-2">
-                                                        <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Digital Reach</label>
+                                                    <div className="space-y-1">
+                                                        <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Email Address</label>
                                                         <input
                                                             type="email" name="email" required placeholder="name@organization.com" value={form.email} onChange={handleChange}
-                                                            className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
+                                                            className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all"
                                                         />
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-2">
-                                                    <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Direct Pipeline (Phone)</label>
+                                                <div className="space-y-1">
+                                                    <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Phone Number</label>
                                                     <input
                                                         type="tel" name="phone" placeholder="+00 000 000 0000" value={form.phone} onChange={handleChange}
-                                                        className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all"
+                                                        className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all"
                                                     />
                                                 </div>
 
-                                                <div className="space-y-3">
-                                                    <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Executive Portfolio (Optional Upload)</label>
+                                                <div className="space-y-1">
+                                                    <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Upload CV / Portfolio (Optional)</label>
                                                     <div className="relative group/file">
                                                         <input
                                                             type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange}
                                                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                                                         />
-                                                        <div className="w-full rounded-xl border-2 border-dashed border-navy/10 group-hover/file:border-gold/50 group-hover/file:bg-gold/5 bg-surface/30 p-4 md:p-6 flex flex-col md:flex-row items-center justify-center gap-3 transition-all duration-500">
-                                                            <Upload className={fileName ? "text-gold" : "text-navy/20"} size={28} />
-                                                            <span className={`text-sm md:text-base tracking-wide text-center md:text-left ${fileName ? "text-navy font-bold" : "text-navy/40 font-light"}`}>
-                                                                {fileName || "Drag portfolio here or click to browse"}
+                                                        <div className="w-full rounded-lg border-2 border-dashed border-navy/10 group-hover/file:border-gold/50 group-hover/file:bg-gold/5 bg-surface/30 p-3 flex flex-row items-center justify-center gap-3 transition-all duration-500">
+                                                            <Upload className={fileName ? "text-gold" : "text-navy/20"} size={20} />
+                                                            <span className={`text-xs md:text-sm tracking-wide ${fileName ? "text-navy font-bold" : "text-navy/40 font-light"}`}>
+                                                                {fileName || "Click to browse or drag & drop your file"}
                                                             </span>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-2">
-                                                    <label className="text-[10px] md:text-[11px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Strategic Intent</label>
+                                                <div className="space-y-1">
+                                                    <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Message</label>
                                                     <textarea
-                                                        name="message" rows={3} placeholder="Briefly describe your objectives..." value={form.message} onChange={handleChange}
-                                                        className="w-full bg-surface/50 border border-navy/10 rounded-xl py-3 px-4 text-base md:text-lg text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-4 focus:ring-gold/5 transition-all resize-none"
+                                                        name="message" rows={2} placeholder="Briefly describe your objectives..." value={form.message} onChange={handleChange}
+                                                        className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all resize-none"
                                                     />
                                                 </div>
 
                                                 <motion.button
-                                                    whileHover={{ y: -3 }}
+                                                    whileHover={{ y: -2 }}
                                                     whileTap={{ scale: 0.98 }}
                                                     type="submit"
-                                                    className="w-full group relative h-14 md:h-16 rounded-xl bg-navy text-gold font-bold tracking-[0.4em] text-sm md:text-base shadow-xl overflow-hidden transition-all"
+                                                    className="w-full group relative h-11 md:h-12 rounded-lg gradient-gold text-white font-bold tracking-[0.3em] text-xs md:text-sm shadow-lg overflow-hidden transition-all"
                                                 >
-                                                    <div className="relative z-10 flex items-center justify-center gap-3">
-                                                        INITIATE TRANSMISSION <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />
+                                                    <div className="relative z-10 flex items-center justify-center gap-2">
+                                                        Send Message <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                                                     </div>
-                                                    <div className="absolute inset-0 bg-gold/10 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+                                                    <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                                                 </motion.button>
                                             </form>
                                         </div>
@@ -355,7 +355,7 @@ const Contact = () => {
                 </section>
 
                 {/* Spacer Section for Footer Transition */}
-                <div className="h-24 md:h-40 bg-background" />
+                <div className="h-10 md:h-16 bg-background" />
             </main>
             <Footer />
         </div>

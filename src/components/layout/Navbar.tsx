@@ -32,40 +32,50 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled || location.pathname !== "/"
-          ? "gradient-navy shadow-lg py-3 md:py-4 backdrop-blur-md bg-opacity-95"
-          : "bg-transparent py-5 md:py-8"
-          } ${scrolled ? 'border-b border-primary-foreground/10' : ''}`}
+            ? "gradient-navy shadow-lg py-2 md:py-3 backdrop-blur-md bg-opacity-95 border-b border-white/10"
+            : "bg-transparent py-4 md:py-5"
+          }`}
       >
-        <div className="w-full flex items-center justify-between px-4 md:px-6 lg:px-8">
-          <Link to="/" className="flex items-center gap-3 group transition-transform hover:scale-[1.01] z-50">
-            <span className="text-xl md:text-2xl lg:text-3xl font-display font-bold text-primary-foreground tracking-tight whitespace-nowrap">
+        <div className="w-full flex items-center justify-between px-4 md:px-8 lg:px-12">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group transition-transform hover:scale-[1.01] z-50 shrink-0">
+            <span className="text-lg md:text-xl lg:text-2xl font-display font-bold text-primary-foreground tracking-tight whitespace-nowrap">
               Nautilus <span className="text-gradient-gold">International</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
-            <ul className="flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-3">
+            <ul className="flex items-center gap-1">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className={`relative text-base xl:text-lg tracking-normal uppercase font-bold transition-all duration-300 py-2 px-2 group ${isActive(item.href)
-                      ? "text-gold"
-                      : "text-primary-foreground hover:text-gold"
+                    className={`relative text-sm xl:text-[15px] tracking-wide uppercase font-semibold transition-all duration-200 py-1.5 px-3 rounded-md group ${isActive(item.href)
+                        ? "text-gold bg-white/10"
+                        : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
                       }`}
                   >
                     {item.label}
-                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gold transform origin-left transition-transform duration-300 ${isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                    <span
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gold rounded-full transition-all duration-300 ${isActive(item.href) ? "w-4/5" : "w-0 group-hover:w-4/5"
+                        }`}
+                    />
                   </Link>
                 </li>
               ))}
             </ul>
+
+            {/* Divider */}
+            <div className="w-px h-6 bg-white/20 mx-2" />
+
+            {/* Contact Button */}
             <Link
               to="/contact"
-              className="gradient-gold text-white px-8 py-4 rounded-sm text-base xl:text-lg font-bold tracking-wide hover:shadow-[0_0_25px_rgba(202,138,4,0.4)] hover:scale-105 transition-all shadow-xl"
+              className={`gradient-gold text-white px-5 py-2 rounded-md text-sm xl:text-[15px] font-bold tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:scale-105 whitespace-nowrap ${isActive("/contact") ? "opacity-80" : ""
+                }`}
             >
-              CONTACT US
+              Contact Us
             </Link>
           </div>
 
@@ -75,46 +85,46 @@ const Navbar = () => {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu Backdrop */}
       <div
-        className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ${mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`lg:hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40 transition-opacity duration-300 ${mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         onClick={() => setMobileOpen(false)}
       />
 
       {/* Mobile Sidebar */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-fit max-h-screen rounded-bl-2xl w-1/2 min-w-[200px] z-50 bg-navy/98 backdrop-blur-2xl border-l border-b border-primary-foreground/10 shadow-2xl transition-transform duration-500 ease-in-out flex flex-col pt-24 px-6 pb-6 overflow-y-auto ${mobileOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-0 right-0 h-fit max-h-screen rounded-bl-2xl w-[60%] min-w-[220px] z-50 bg-navy backdrop-blur-2xl border-l border-b border-white/10 shadow-2xl transition-transform duration-500 ease-in-out flex flex-col pt-20 px-6 pb-6 overflow-y-auto ${mobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <ul className="flex flex-col items-start gap-4">
+        <ul className="flex flex-col items-start gap-1">
           {navItems.map((item) => (
             <li key={item.href} className="w-full">
               <Link
                 to={item.href}
                 onClick={() => setMobileOpen(false)}
-                className={`text-lg tracking-wide uppercase font-bold transition-all block py-1.5 ${isActive(item.href)
-                  ? "text-gold"
-                  : "text-primary-foreground hover:text-gold"
+                className={`text-base tracking-wide uppercase font-semibold transition-all block py-2 px-3 rounded-md ${isActive(item.href)
+                    ? "text-gold bg-white/10"
+                    : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
                   }`}
               >
                 {item.label}
               </Link>
             </li>
           ))}
-          <div className="w-full h-px bg-primary-foreground/10 my-4" />
+          <div className="w-full h-px bg-white/10 my-3" />
           <li className="w-full">
             <Link
               to="/contact"
               onClick={() => setMobileOpen(false)}
-              className="gradient-gold text-white px-4 py-3 rounded-sm text-base font-bold tracking-wide shadow-xl text-center block w-full hover:scale-105 transition-all"
+              className="gradient-gold text-white px-4 py-2.5 rounded-md text-sm font-bold tracking-widest uppercase shadow-lg text-center block w-full hover:scale-105 transition-all"
             >
-              CONTACT US
+              Contact Us
             </Link>
           </li>
         </ul>
