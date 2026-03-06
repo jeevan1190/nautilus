@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Linkedin, Mail, MapPin, Phone, Instagram, ArrowUpRight } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, Instagram, ArrowUpRight, Globe } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 const Footer = () => {
@@ -111,21 +111,41 @@ const Footer = () => {
           {/* Reach Out - Adjust sizing for contact page redundancy */}
           <motion.div variants={fadeInUp} className={`space-y-6 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Global Reach</h4>
-            <div className="space-y-5">
+            <div className="space-y-4">
               <div className="flex gap-4 items-start group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
                   <MapPin size={18} className="text-gold" />
                 </div>
-                <p className="text-sm md:text-base font-bold leading-relaxed text-white drop-shadow-md">
-                  Pune, Maharashtra, <br />India – 411062
-                </p>
+                <div className="text-sm md:text-base font-bold leading-relaxed text-white drop-shadow-md">
+                  <span className="block text-gold mb-1">Nautilus International</span>
+                  Office No 214, Vishnu Capital, <br />
+                  City Pride School Lane, <br />
+                  Chikhali - Moshi, Pune, <br />
+                  Maharashtra, India – 411 062
+                </div>
               </div>
               <div className="flex gap-4 items-center group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
                   <Phone size={18} className="text-gold" />
                 </div>
                 <a href="tel:+917410775779" className="text-sm md:text-base font-bold text-white drop-shadow-md hover:text-gold transition-colors">
-                  +91 7410775779
+                  HP - +91 7410775779
+                </a>
+              </div>
+              <div className="flex gap-4 items-center group">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <Mail size={18} className="text-gold" />
+                </div>
+                <a href="mailto:hr@nautilusinternational.in" className="text-sm md:text-base font-bold text-white drop-shadow-md hover:text-gold transition-colors break-all">
+                  hr@nautilusinternational.in
+                </a>
+              </div>
+              <div className="flex gap-4 items-center group">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <Globe size={18} className="text-gold" />
+                </div>
+                <a href="https://www.nautilusinternational.in" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-bold text-white drop-shadow-md hover:text-gold transition-colors break-all">
+                  www.nautilusinternational.in
                 </a>
               </div>
             </div>
