@@ -87,7 +87,7 @@ const DifferentiatorsSection = () => {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-8 leading-[1.1]">
                         What <span className="text-gradient-gold italic">Differentiates</span> Us?
                     </h2>
-                    <p className="text-foreground/60 text-base md:text-xl leading-relaxed font-light px-4">
+                    <p className="text-foreground/60 text-base md:text-xl leading-relaxed font-bold px-4">
                         Nautilus International stands out through a strategic architecture of unique benefits engineered for your organizational success.
                     </p>
                 </motion.div>
@@ -118,7 +118,7 @@ const DifferentiatorsSection = () => {
                                 {item.title}
                             </h3>
 
-                            <p className="text-foreground/70 leading-relaxed text-sm xl:text-base font-normal italic relative z-10">
+                            <p className="text-foreground leading-relaxed text-sm xl:text-base font-bold italic relative z-10">
                                 "{item.desc}"
                             </p>
 
@@ -160,7 +160,7 @@ const DifferentiatorsSection = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            className="text-white/70 text-lg md:text-2xl font-light italic leading-relaxed md:leading-loose"
+                            className="text-white drop-shadow-md text-lg md:text-2xl font-bold italic leading-relaxed md:leading-loose"
                         >
                             "Partnering with Nautilus International means engaging a consultant that genuinely prioritizes your trajectory. Our commitment to excellence is the bridge between potential and achievement."
                         </motion.p>

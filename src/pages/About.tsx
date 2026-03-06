@@ -37,7 +37,7 @@ const About = () => {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
-                            className="inline-block text-gold font-black tracking-[0.6em] uppercase text-[10px] md:text-xs mb-6 px-4 py-2 border border-gold/20 rounded-full bg-gold/5"
+                            className="inline-block text-white drop-shadow-md font-black tracking-[0.6em] uppercase text-[10px] md:text-xs mb-6 px-4 py-2 border border-white/20 rounded-full bg-white/5"
                         >
                             Discover Nautilus
                         </motion.span>
@@ -45,15 +45,15 @@ const About = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight leading-tight py-1"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gradient-gold mb-6 tracking-tight leading-tight py-1"
                         >
-                            About <span className="text-gradient-gold italic">Nautilus</span>
+                            About Nautilus
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6, duration: 1 }}
-                            className="text-white/60 max-w-2xl mx-auto text-base md:text-xl font-light leading-relaxed px-4 text-pretty"
+                            className="text-white drop-shadow-md max-w-2xl mx-auto text-base md:text-xl font-bold leading-relaxed px-4 text-pretty"
                         >
                             We are the strategic link between visionary organizations and the world-class talent they need to thrive.
                         </motion.p>

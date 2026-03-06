@@ -21,7 +21,7 @@ const Differentiators = () => {
                         <p className="text-gold font-semibold tracking-[0.4em] uppercase text-xs mb-4">Our Advantage</p>
                         <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-6">What Differentiates Us</h1>
                         <div className="w-24 h-1.5 gradient-gold mx-auto rounded-full mb-8" />
-                        <p className="text-primary-foreground/70 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+                        <p className="text-primary-foreground/70 max-w-2xl mx-auto text-lg md:text-xl font-bold leading-relaxed">
                             Discover the unique features and commitment to quality that set Nautilus International apart in the recruitment industry.
                         </p>
                     </div>

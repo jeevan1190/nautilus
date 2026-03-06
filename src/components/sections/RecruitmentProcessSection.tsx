@@ -108,7 +108,7 @@ const RecruitmentProcessSection = () => {
                                 {step.title}
                             </h3>
 
-                            <p className="text-foreground/70 text-xs xl:text-sm leading-relaxed font-normal group-hover:text-foreground/90 transition-colors relative z-10 flex-grow">
+                            <p className="text-foreground text-xs xl:text-sm leading-relaxed font-bold group-hover:text-foreground/90 transition-colors relative z-10 flex-grow">
                                 {step.desc}
                             </p>
 

@@ -114,7 +114,7 @@ const WhyUsSection = () => (
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xl md:text-2xl text-foreground mb-2 group-hover:text-navy transition-colors">{r.title}</h4>
-                  <p className="text-foreground/60 leading-relaxed text-sm md:text-base font-normal italic group-hover:text-foreground transition-colors">{r.desc}</p>
+                  <p className="text-foreground/60 leading-relaxed text-sm md:text-base font-bold italic group-hover:text-foreground transition-colors">{r.desc}</p>
                 </div>
               </motion.div>
             ))}

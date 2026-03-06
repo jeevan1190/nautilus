@@ -93,7 +93,7 @@ const Contact = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight leading-tight py-1"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white drop-shadow-lg mb-6 tracking-tight leading-tight py-1"
                         >
                             Our <span className="text-gradient-gold italic">Global Office</span>
                         </motion.h1>
@@ -101,7 +101,7 @@ const Contact = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6, duration: 1 }}
-                            className="text-white/60 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed px-4 text-pretty"
+                            className="text-white drop-shadow-md max-w-2xl mx-auto text-sm md:text-base font-bold leading-relaxed px-4 text-pretty"
                         >
                             Ready to architect your organization's most critical transitions? Experience a new echelon of strategic engagement.
                         </motion.p>
@@ -160,7 +160,7 @@ const Contact = () => {
                                         <h3 className="text-xl xl:text-2xl font-display font-bold text-navy mb-2 leading-tight">
                                             {path.title}
                                         </h3>
-                                        <p className="text-navy/60 text-sm xl:text-base font-light leading-relaxed">
+                                        <p className="text-navy drop-shadow-md text-sm xl:text-base font-bold leading-relaxed">
                                             {path.desc}
                                         </p>
                                     </div>
@@ -232,7 +232,7 @@ const Contact = () => {
                                                         ) : (
                                                             <div className="text-sm md:text-base font-medium text-white leading-snug">
                                                                 {item.value}
-                                                                {item.detail && <p className="text-sm md:text-base font-light text-white/40 mt-1 italic">"{item.detail}"</p>}
+                                                                {item.detail && <p className="text-sm md:text-base font-bold text-white/40 mt-1 italic">"{item.detail}"</p>}
                                                             </div>
                                                         )}
                                                     </div>
@@ -241,7 +241,7 @@ const Contact = () => {
                                         </div>
 
                                         <div className="mt-6 pt-5 border-t border-white/5">
-                                            <div className="flex items-center gap-4 text-white/30 text-xs md:text-sm font-light italic">
+                                            <div className="flex items-center gap-4 text-white/30 text-xs md:text-sm font-bold italic">
                                                 <Clock size={16} />
                                                 <span>Global Operations: 24/7 Strategic Support</span>
                                             </div>
@@ -280,7 +280,7 @@ const Contact = () => {
 
                                         <div className="relative z-10">
                                             <h3 className="text-xl md:text-2xl font-display font-bold text-navy mb-2">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
-                                            <p className="text-navy/60 text-xs md:text-sm font-light mb-5 leading-relaxed">
+                                            <p className="text-navy drop-shadow-md text-xs md:text-sm font-bold mb-5 leading-relaxed">
                                                 Provide your details for a confidential executive consultation.
                                             </p>
 
@@ -319,7 +319,7 @@ const Contact = () => {
                                                         />
                                                         <div className="w-full rounded-lg border-2 border-dashed border-navy/10 group-hover/file:border-gold/50 group-hover/file:bg-gold/5 bg-surface/30 p-3 flex flex-row items-center justify-center gap-3 transition-all duration-500">
                                                             <Upload className={fileName ? "text-gold" : "text-navy/20"} size={20} />
-                                                            <span className={`text-xs md:text-sm tracking-wide ${fileName ? "text-navy font-bold" : "text-navy/40 font-light"}`}>
+                                                            <span className={`text-xs md:text-sm tracking-wide ${fileName ? "text-navy font-bold" : "text-navy/40 font-bold"}`}>
                                                                 {fileName || "Click to browse or drag & drop your file"}
                                                             </span>
                                                         </div>

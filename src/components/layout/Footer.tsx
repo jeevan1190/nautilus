@@ -48,7 +48,7 @@ const Footer = () => {
                 <span className="text-gold italic">International</span>
               </h3>
             </Link>
-            <p className="text-white/60 text-sm md:text-base font-light leading-relaxed italic max-w-sm">
+            <p className="text-white drop-shadow-md text-sm md:text-base font-bold leading-relaxed italic max-w-sm">
               "A strategic architecture of recruitment, engineered to build the world's most dynamic executive teams."
             </p>
             <div className="flex gap-4 pt-4">
@@ -60,7 +60,7 @@ const Footer = () => {
                 <motion.a
                   whileHover={{ y: -5, backgroundColor: "hsl(var(--gold))", color: "hsl(var(--navy))" }}
                   key={i} href={social.href}
-                  className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 shadow-lg text-white/70"
+                  className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 shadow-lg text-white drop-shadow-md"
                 >
                   <social.icon size={20} />
                 </motion.a>
@@ -81,7 +81,7 @@ const Footer = () => {
                 { label: "Contact Us", path: "/contact" }
               ].map(link => (
                 <li key={link.label}>
-                  <Link to={link.path} className="text-sm md:text-base font-light text-white/70 hover:text-gold hover:translate-x-2 transition-all flex items-center gap-2 group">
+                  <Link to={link.path} className="text-sm md:text-base font-bold text-white drop-shadow-md hover:text-gold hover:translate-x-2 transition-all flex items-center gap-2 group">
                     <ArrowUpRight size={14} className="text-gold/20 group-hover:text-gold transition-colors" />
                     {link.label}
                   </Link>
@@ -93,7 +93,7 @@ const Footer = () => {
           {/* Sector Expertise */}
           <motion.div variants={fadeInUp} className="space-y-6">
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Expertise</h4>
-            <ul className="space-y-4 text-sm md:text-base font-light text-white/70">
+            <ul className="space-y-4 text-sm md:text-base font-bold text-white drop-shadow-md">
               {[
                 "Strategic IT Sourcing",
                 "Advanced Engineering",
@@ -116,7 +116,7 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
                   <MapPin size={18} className="text-gold" />
                 </div>
-                <p className="text-sm md:text-base font-light leading-relaxed text-white/70">
+                <p className="text-sm md:text-base font-bold leading-relaxed text-white drop-shadow-md">
                   Pune, Maharashtra, <br />India – 411062
                 </p>
               </div>
@@ -124,7 +124,7 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
                   <Phone size={18} className="text-gold" />
                 </div>
-                <a href="tel:+917410775779" className="text-sm md:text-base font-light text-white/70 hover:text-gold transition-colors">
+                <a href="tel:+917410775779" className="text-sm md:text-base font-bold text-white drop-shadow-md hover:text-gold transition-colors">
                   +91 7410775779
                 </a>
               </div>

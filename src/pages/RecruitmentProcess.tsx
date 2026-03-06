@@ -29,8 +29,8 @@ const RecruitmentProcess = () => {
                         className="absolute inset-0 z-0"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1454165833767-027ffea10c4b?auto=format&fit=crop&q=80&w=2072"
-                            alt="Strategic Planning"
+                            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070"
+                            alt="Professional Team Meeting"
                             className="w-full h-full object-cover"
                             fetchPriority="high"
                             loading="eager"
@@ -51,7 +51,7 @@ const RecruitmentProcess = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight leading-tight py-1"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white drop-shadow-lg mb-6 tracking-tight leading-tight py-1"
                         >
                             Our <span className="text-gradient-gold italic">Process</span>
                         </motion.h1>
@@ -59,7 +59,7 @@ const RecruitmentProcess = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6, duration: 1 }}
-                            className="text-white/60 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed px-4 text-pretty"
+                            className="text-white drop-shadow-md max-w-2xl mx-auto text-sm md:text-base font-bold leading-relaxed px-4 text-pretty"
                         >
                             A precision-engineered recruitment lifecycle designed to bridge the gap between world-class talent and visionary organizations.
                         </motion.p>
@@ -85,7 +85,7 @@ const RecruitmentProcess = () => {
                                         <p.icon size={28} className="text-navy group-hover:text-navy transition-colors" />
                                     </div>
                                     <h4 className="text-xl xl:text-2xl font-display font-bold text-foreground mb-4">{p.title}</h4>
-                                    <p className="text-foreground/70 text-sm xl:text-base leading-relaxed">{p.desc}</p>
+                                    <p className="text-foreground text-sm xl:text-base leading-relaxed">{p.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

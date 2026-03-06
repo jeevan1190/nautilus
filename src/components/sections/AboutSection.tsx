@@ -158,7 +158,7 @@ const AboutSection = () => {
                 Nautilus International <br />
                 <span className="text-gradient-gold italic">Catalysts for Global Success</span>
               </motion.h2>
-              <motion.div variants={fadeInUp} className="space-y-4 text-foreground/70 text-sm md:text-base leading-relaxed font-normal">
+              <motion.div variants={fadeInUp} className="space-y-4 text-foreground text-sm md:text-base leading-relaxed font-bold">
                 <p>
                   At <span className="text-foreground font-semibold">Nautilus International</span>, we understand that innovation thrives through collaboration and the collective
                   power of people. Your goal is to challenge the status quo, pioneer new solutions, and propel industries into
@@ -247,7 +247,7 @@ const AboutSection = () => {
                 <Target className="text-gold group-hover:text-navy transition-colors" size={32} />
               </div>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-primary-foreground mb-6">Our Vision</h3>
-              <p className="text-primary-foreground/70 text-lg leading-relaxed font-light italic">
+              <p className="text-primary-foreground/70 text-lg leading-relaxed font-bold italic">
                 "To be the leading global catalyst for transformation, empowering organizations to build world-class teams that redefine industry standards and exceed all expectations."
               </p>
             </motion.div>
@@ -257,7 +257,7 @@ const AboutSection = () => {
                 <Award className="text-teal group-hover:text-white transition-colors" size={32} />
               </div>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-primary-foreground mb-6">Our Mission</h3>
-              <p className="text-primary-foreground/70 text-lg leading-relaxed font-light">
+              <p className="text-primary-foreground/70 text-lg leading-relaxed font-bold">
                 "To bridge the gap between ambition and achievement by identifying exceptional talent and leveraging intelligent recruitment technology to drive sustainable corporate success."
               </p>
             </motion.div>
@@ -295,7 +295,7 @@ const AboutSection = () => {
                   <v.icon className="text-accent-foreground" size={window.innerWidth > 1280 ? 36 : 28} />
                 </div>
                 <h4 className="font-display font-bold text-foreground text-xl xl:text-2xl mb-4 group-hover:text-navy transition-colors relative z-10">{v.title}</h4>
-                <p className="text-foreground/70 text-sm xl:text-base leading-relaxed font-medium group-hover:text-foreground/90 transition-colors relative z-10">{v.desc}</p>
+                <p className="text-foreground text-sm xl:text-base leading-relaxed font-medium group-hover:text-foreground/90 transition-colors relative z-10">{v.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -324,7 +324,7 @@ const AboutSection = () => {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h4 className="text-lg xl:text-xl font-bold text-foreground mb-4 leading-tight uppercase tracking-wider relative z-10">{step.title}</h4>
-                    <p className="text-foreground/70 text-sm xl:text-base leading-relaxed font-normal relative z-10">{step.desc}</p>
+                    <p className="text-foreground text-sm xl:text-base leading-relaxed font-bold relative z-10">{step.desc}</p>
                   </div>
                 </div>
                 {i < 3 && (

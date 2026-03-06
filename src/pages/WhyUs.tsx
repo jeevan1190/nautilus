@@ -45,7 +45,7 @@ const WhyUs = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight leading-tight py-1"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white drop-shadow-lg mb-6 tracking-tight leading-tight py-1"
                         >
                             Why <span className="text-gradient-gold italic">Nautilus? </span>
                         </motion.h1>
@@ -53,7 +53,7 @@ const WhyUs = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6, duration: 1 }}
-                            className="text-white/60 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed px-4 text-pretty"
+                            className="text-white drop-shadow-md max-w-2xl mx-auto text-sm md:text-base font-bold leading-relaxed px-4 text-pretty"
                         >
                             The preferred partner for organizations that demand precision, reliability, and world-class talent architecture.
                         </motion.p>

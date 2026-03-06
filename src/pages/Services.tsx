@@ -52,7 +52,7 @@ const Services = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight leading-tight py-1"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white drop-shadow-lg mb-6 tracking-tight leading-tight py-1"
                         >
                             Our <span className="text-gradient-gold italic">Services</span>
                         </motion.h1>
@@ -60,7 +60,7 @@ const Services = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6, duration: 1 }}
-                            className="text-white/60 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed px-4 text-pretty"
+                            className="text-white drop-shadow-md max-w-2xl mx-auto text-sm md:text-base font-bold leading-relaxed px-4 text-pretty"
                         >
                             Tailored recruitment strategies and strategic HR advisory designed for the modern global enterprise.
                         </motion.p>
@@ -126,7 +126,7 @@ const Services = () => {
                 <section className="py-24 bg-surface/30 relative">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-teal/5 rounded-full blur-[100px] pointer-events-none" />
                     <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
-                        <div className="grid lg:grid-cols-3 gap-8 xl:gap-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 xl:gap-12 items-stretch">
                             {benefits.map((b, i) => (
                                 <motion.div
                                     key={b.title}
@@ -134,13 +134,14 @@ const Services = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1, duration: 0.6 }}
-                                    className="p-8 md:p-10 rounded-3xl bg-card border border-navy/5 shadow-[0_10px_35px_-12px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all group"
+                                    className="flex flex-col h-full relative p-8 md:p-10 rounded-3xl bg-card border border-navy/5 shadow-[0_12px_35px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.12)] hover:border-gold/30 transition-all duration-500 group overflow-hidden"
                                 >
-                                    <div className="w-14 h-14 rounded-2xl bg-teal/10 flex items-center justify-center text-teal mb-8 group-hover:scale-110 transition-transform duration-500">
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
+                                    <div className="w-14 h-14 rounded-2xl bg-teal/10 flex items-center justify-center text-teal mb-8 group-hover:scale-110 shadow-[0_10px_20px_rgba(13,148,136,0.1)] transition-transform duration-500">
                                         <b.icon size={26} />
                                     </div>
                                     <h4 className="text-xl font-bold text-foreground mb-4 font-display group-hover:text-navy transition-colors">{b.title}</h4>
-                                    <p className="text-foreground/70 text-sm md:text-base leading-relaxed">{b.desc}</p>
+                                    <p className="text-foreground text-sm md:text-base leading-relaxed flex-grow">{b.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -213,7 +214,7 @@ const Services = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.3 }}
-                                    className="text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto"
+                                    className="text-white drop-shadow-md text-lg md:text-xl mb-12 max-w-2xl mx-auto"
                                 >
                                     Partner with Nautilus International and gain access to a world of exceptional talent and strategic HR intelligence.
                                 </motion.p>

@@ -83,7 +83,7 @@ const HeroSection = () => {
               <span className="text-gradient-gold italic">International</span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="max-w-xl mx-auto lg:mx-0 text-primary-foreground/70 text-sm md:text-base lg:text-lg leading-relaxed mb-10 font-light">
+            <motion.p variants={itemVariants} className="max-w-xl mx-auto lg:mx-0 text-primary-foreground/70 text-sm md:text-base lg:text-lg leading-relaxed mb-10 font-bold">
               We bridge the gap between world-class talent and visionary organizations.
               Experience a new standard in specialized executive search and HR advisory.
             </motion.p>

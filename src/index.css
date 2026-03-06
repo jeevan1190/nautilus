@@ -121,6 +121,15 @@
   h6 {
     @apply font-display;
   }
+
+  /* Make all non-title text bold and darker so it is clearly visible */
+  p, li, dl, dd, label, a, span:not(.text-gradient-gold, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span) {
+    font-weight: 700 !important;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
+  }
+  .dark p, .dark li, .dark dl, .dark dd, .dark label, .dark a, .dark span:not(.text-gradient-gold, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span) {
+    text-shadow: 0px 0px 1px rgba(255,255,255,0.2);
+  }
 }
 
 @layer utilities {
