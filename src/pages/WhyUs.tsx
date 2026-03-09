@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhyUsSection from "@/components/sections/WhyUsSection";
+import PartnerSection from "@/components/sections/PartnerSection";
 import DifferentiatorsSection from "@/components/sections/DifferentiatorsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import { useEffect } from "react";
@@ -15,7 +16,7 @@ const WhyUs = () => {
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
             <main className="flex-grow">
-                <header className="relative h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
+                <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
                     <motion.div
                         initial={{ scale: 1.1, filter: "brightness(0.3)" }}
                         animate={{ scale: 1, filter: "brightness(0.5)" }}
@@ -64,6 +65,10 @@ const WhyUs = () => {
 
                 <div>
                     <WhyUsSection />
+                </div>
+
+                <div className="bg-surface/10">
+                    <PartnerSection />
                 </div>
 
                 <div className="bg-surface/30">

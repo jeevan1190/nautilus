@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-navy pt-16 pb-10 overflow-hidden text-white/90">
+    <footer className="relative bg-navy pt-12 pb-8 overflow-hidden text-white/90">
       {/* Decorative High-End Elements */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gold/[0.03] rounded-full blur-[120px] pointer-events-none" />
@@ -38,20 +38,21 @@ const Footer = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12 border-b border-white/5 pb-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-8 border-b border-white/5 pb-8"
         >
           {/* Brand Column */}
-          <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-6">
+          <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-4">
             <Link to="/" className="inline-block group transition-transform hover:scale-[1.01]">
-              <h3 className="text-2xl md:text-3xl font-display font-bold leading-tight tracking-tighter">
-                Nautilus <br />
-                <span className="text-gold italic">International</span>
-              </h3>
+              <img
+                src="/logo.jpeg"
+                alt="Nautilus International"
+                className="h-10 md:h-14 w-auto object-contain bg-white/95 px-3 py-1.5 rounded-xl shadow-lg"
+              />
             </Link>
             <p className="text-white drop-shadow-md text-sm md:text-base font-bold leading-relaxed italic max-w-sm">
               "A strategic architecture of recruitment, engineered to build the world's most dynamic executive teams."
             </p>
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-4 pt-2">
               {[
                 { icon: Linkedin, href: "#" },
                 { icon: Instagram, href: "#" },
@@ -69,9 +70,9 @@ const Footer = () => {
           </motion.div>
 
           {/* Global Navigation */}
-          <motion.div variants={fadeInUp} className="space-y-6">
+          <motion.div variants={fadeInUp} className="space-y-4">
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Navigation</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {[
                 { label: "Home", path: "/" },
                 { label: "About", path: "/about" },
@@ -91,9 +92,9 @@ const Footer = () => {
           </motion.div>
 
           {/* Sector Expertise */}
-          <motion.div variants={fadeInUp} className="space-y-6">
+          <motion.div variants={fadeInUp} className="space-y-4">
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Expertise</h4>
-            <ul className="space-y-4 text-sm md:text-base font-bold text-white drop-shadow-md">
+            <ul className="space-y-2.5 text-sm md:text-base font-bold text-white drop-shadow-md">
               {[
                 "Strategic IT Sourcing",
                 "Advanced Engineering",
@@ -109,9 +110,9 @@ const Footer = () => {
           </motion.div>
 
           {/* Reach Out - Adjust sizing for contact page redundancy */}
-          <motion.div variants={fadeInUp} className={`space-y-6 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
+          <motion.div variants={fadeInUp} className={`space-y-4 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gold/80">Global Reach</h4>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="flex gap-4 items-start group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
                   <MapPin size={18} className="text-gold" />
@@ -129,7 +130,7 @@ const Footer = () => {
                   <Phone size={18} className="text-gold" />
                 </div>
                 <a href="tel:+917410775779" className="text-sm md:text-base font-bold text-white drop-shadow-md hover:text-gold transition-colors">
-                  HP - +91 7410775779
+                  +91 7410775779
                 </a>
               </div>
               <div className="flex gap-4 items-center group">
@@ -158,7 +159,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="flex flex-col md:flex-row justify-between items-center gap-8 pt-8 border-t border-white/5"
+          className="flex flex-col md:flex-row justify-between items-center gap-8 pt-6 border-t border-white/5"
         >
           <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-white/30 text-center md:text-left">
             © {new Date().getFullYear()} Nautilus International. Architecture of Success.

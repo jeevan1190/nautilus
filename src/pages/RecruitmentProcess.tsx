@@ -21,7 +21,7 @@ const RecruitmentProcess = () => {
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
             <main className="flex-grow">
-                <header className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+                <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
                     <motion.div
                         initial={{ scale: 1.1, filter: "brightness(0.3)" }}
                         animate={{ scale: 1, filter: "brightness(0.5)" }}
@@ -104,7 +104,7 @@ const RecruitmentProcess = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8 }}
-                            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                            className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200"
@@ -118,7 +118,7 @@ const RecruitmentProcess = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                            className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"

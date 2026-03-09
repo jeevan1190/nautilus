@@ -22,7 +22,7 @@ const Services = () => {
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
             <main className="flex-grow">
-                <header className="relative h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
+                <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
                     <motion.div
                         initial={{ scale: 1.1, filter: "brightness(0.2)" }}
                         animate={{ scale: 1, filter: "brightness(0.4)" }}
@@ -46,7 +46,7 @@ const Services = () => {
                             transition={{ delay: 0.2, duration: 0.6 }}
                             className="inline-block text-white font-black tracking-[0.3em] sm:tracking-[0.5em] md:tracking-[0.6em] uppercase text-[10px] sm:text-xs md:text-sm mb-6 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full gradient-gold shadow-lg border border-white/20 backdrop-blur-sm"
                         >
-                            Elite Expertise
+                            Our Expertise
                         </motion.span>
                         <motion.h1
                             initial={{ opacity: 0, y: 30 }}
@@ -54,7 +54,8 @@ const Services = () => {
                             transition={{ delay: 0.4, duration: 0.8 }}
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white drop-shadow-lg mb-6 tracking-tight leading-tight py-1"
                         >
-                            Our <span className="text-gradient-gold italic">Services</span>
+                            Specialized Solutions for <br />
+                            <span className="text-gradient-gold italic">Global Growth</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -77,11 +78,11 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8 }}
-                            className="w-full h-[300px] sm:h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                            className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200"
-                                alt="Recruitment Interview Process"
+                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200"
+                                alt="Corporate Recruitment Meeting"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -91,7 +92,7 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="w-full h-[300px] sm:h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                            className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200"
@@ -105,10 +106,10 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="w-full h-[300px] sm:h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                            className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
+                                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200"
                                 alt="Executive Search Team"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
@@ -156,7 +157,7 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8 }}
-                            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                            className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1200"
@@ -170,7 +171,7 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+                            className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
                                 src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200"
@@ -195,44 +196,46 @@ const Services = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative overflow-hidden gradient-navy rounded-[3rem] p-12 md:p-20 text-center shadow-2xl"
+                            className="relative overflow-hidden gradient-navy rounded-2xl p-8 md:p-12 shadow-2xl"
                         >
                             <div className="absolute top-0 right-0 w-96 h-96 bg-teal/20 rounded-full blur-[120px] -mr-48 -mt-48" />
                             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/10 rounded-full blur-[120px] -ml-48 -mb-48" />
 
-                            <div className="relative z-10 max-w-4xl mx-auto">
-                                <motion.h2
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 }}
-                                    className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 leading-tight"
-                                >
-                                    Ready to Elevate Your <br />
-                                    <span className="text-gradient-gold italic">Global Workforce?</span>
-                                </motion.h2>
-                                <motion.p
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.3 }}
-                                    className="text-white drop-shadow-md text-lg md:text-xl mb-12 max-w-2xl mx-auto"
-                                >
-                                    Partner with Nautilus International and gain access to a world of exceptional talent and strategic HR intelligence.
-                                </motion.p>
+                            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                                <div className="text-center md:text-left">
+                                    <motion.h2
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2 }}
+                                        className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 leading-tight"
+                                    >
+                                        Ready to Elevate Your{' '}
+                                        <span className="text-gradient-gold italic">Global Workforce?</span>
+                                    </motion.h2>
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.3 }}
+                                        className="text-white/75 text-sm md:text-base max-w-2xl"
+                                    >
+                                        Partner with Nautilus International and gain access to a world of exceptional talent and strategic HR intelligence.
+                                    </motion.p>
+                                </div>
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4 }}
-                                    className="flex flex-col sm:flex-row gap-6 justify-center"
+                                    className="flex flex-col sm:flex-row gap-4 shrink-0"
                                 >
                                     <Link
                                         to="/contact"
-                                        className="bg-gold text-navy px-10 py-5 rounded-full font-bold hover:bg-gold/90 hover:scale-105 transition-all shadow-xl tracking-widest uppercase text-sm"
+                                        className="bg-gold text-navy px-8 py-3.5 rounded-full font-bold hover:bg-gold/90 hover:scale-105 transition-all shadow-xl tracking-widest uppercase text-xs whitespace-nowrap"
                                     >
                                         Start a Consultation
                                     </Link>
                                     <Link
                                         to="/recruitment-process"
-                                        className="border border-white/20 text-white px-10 py-5 rounded-full font-bold hover:bg-white/5 transition-all text-sm tracking-widest uppercase"
+                                        className="border border-white/20 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/5 transition-all text-xs tracking-widest uppercase whitespace-nowrap"
                                     >
                                         Learn Our Process
                                     </Link>

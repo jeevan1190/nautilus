@@ -84,7 +84,7 @@ const staggerContainer: Variants = {
 };
 
 const WhyUsSection = () => (
-  <section id="why-us" className="py-24 bg-background relative overflow-hidden">
+  <section id="why-us" className="py-16 bg-background relative overflow-hidden">
     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal/5 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none" />
     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] -ml-64 -mb-64 pointer-events-none" />
 
@@ -97,12 +97,12 @@ const WhyUsSection = () => (
           variants={staggerContainer}
         >
           <motion.p variants={fadeInUp} className="text-gold font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-6">The Nautilus Difference</motion.p>
-          <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-12 leading-[1.1]">
+          <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-8 leading-[1.1]">
             Why Visionaries <br />
             <span className="text-gradient-gold italic">Choose Our Expertise</span>
           </motion.h2>
 
-          <div className="grid gap-8">
+          <div className="grid gap-6">
             {partnerReasons.map((r, i) => (
               <motion.div
                 key={r.title}
@@ -132,7 +132,7 @@ const WhyUsSection = () => (
           <motion.div
             whileHover={{ rotate: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative gradient-navy rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-14 shadow-2xl overflow-hidden border border-white/10 group"
+            className="relative gradient-navy rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-10 shadow-2xl overflow-hidden border border-white/10 group"
           >
             {/* Decorative Corners */}
             <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-transparent group-hover:border-gold rounded-tl-[3rem] transition-all duration-500" />
@@ -140,7 +140,7 @@ const WhyUsSection = () => (
 
             <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -mr-40 -mt-40" />
 
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-10 border-b border-white/10 pb-6 tracking-wide">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-6 border-b border-white/10 pb-6 tracking-wide">
               Global Scale Impact
             </h3>
 

@@ -32,16 +32,27 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled || location.pathname !== "/"
-            ? "gradient-navy shadow-lg py-2 md:py-3 backdrop-blur-md bg-opacity-95 border-b border-white/10"
-            : "bg-transparent py-4 md:py-5"
+          ? "gradient-navy shadow-lg py-2 md:py-3 backdrop-blur-md bg-opacity-95 border-b border-white/10"
+          : "bg-transparent py-4 md:py-5"
           }`}
       >
         <div className="w-full flex items-center justify-between px-4 md:px-8 lg:px-12">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group transition-transform hover:scale-[1.01] z-50 shrink-0">
-            <span className="text-lg md:text-xl lg:text-2xl font-display font-bold text-primary-foreground tracking-tight whitespace-nowrap">
-              Nautilus <span className="text-gradient-gold">International</span>
-            </span>
+            <img
+              src="/logo.jpeg"
+              alt="Nautilus International"
+              className="h-10 md:h-12 lg:h-14 w-auto object-contain bg-white/95 px-2 py-1 rounded-md shadow-sm"
+              onError={(e) => {
+                // Fallback text if image fails to load
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const span = document.createElement('span');
+                span.className = "text-lg md:text-xl lg:text-2xl font-display font-bold text-primary-foreground tracking-tight whitespace-nowrap";
+                span.innerHTML = 'Nautilus <span class="text-gradient-gold">International</span>';
+                target.parentElement?.appendChild(span);
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -52,8 +63,8 @@ const Navbar = () => {
                   <Link
                     to={item.href}
                     className={`relative text-sm xl:text-[15px] tracking-wide uppercase font-semibold transition-all duration-200 py-1.5 px-3 rounded-md group ${isActive(item.href)
-                        ? "text-gold bg-white/10"
-                        : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
+                      ? "text-gold bg-white/10"
+                      : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
                       }`}
                   >
                     {item.label}
@@ -109,8 +120,8 @@ const Navbar = () => {
                 to={item.href}
                 onClick={() => setMobileOpen(false)}
                 className={`text-base tracking-wide uppercase font-semibold transition-all block py-2 px-3 rounded-md ${isActive(item.href)
-                    ? "text-gold bg-white/10"
-                    : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
+                  ? "text-gold bg-white/10"
+                  : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
                   }`}
               >
                 {item.label}

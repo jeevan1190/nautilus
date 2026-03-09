@@ -1,8 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AboutSection from "@/components/sections/AboutSection";
-import ServicesSection from "@/components/sections/ServicesSection";
-import WhyUsSection from "@/components/sections/WhyUsSection";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -15,7 +13,7 @@ const About = () => {
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
             <main className="flex-grow">
-                <header className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden font-display">
+                <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden font-display">
                     <motion.div
                         initial={{ scale: 1.1 }}
                         animate={{ scale: 1 }}
@@ -65,14 +63,6 @@ const About = () => {
                 <div>
                     <AboutSection />
                 </div>
-
-                <div className="bg-surface/30">
-                    <WhyUsSection />
-                </div>
-
-                <div className="bg-background">
-                    <ServicesSection />
-                </div>
             </main>
             <Footer />
         </div>
@@ -80,6 +70,3 @@ const About = () => {
 };
 
 export default About;
-
-
-

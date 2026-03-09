@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { Users, Globe, Heart, Lightbulb, Shield, Star, Target, Award, CheckCircle2, TrendingUp, Zap } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Users, Globe, Heart, Lightbulb, Shield, Star, Target, Award, CheckCircle2, Zap, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 
@@ -15,10 +15,14 @@ const values = [
 ];
 
 const processSteps = [
-  { title: "Understanding Requirements", desc: "In-depth consultation to align with your culture and goals." },
-  { title: "Role Analysis", desc: "Detailed breakdown of technical skills and soft competencies." },
-  { title: "Talent Sourcing", desc: "Omnichannel approach targeting both active and passive talent." },
-  { title: "Screening & Assessment", desc: "Rigorous vetting process ensuring only the best qualify." },
+  { title: "Understanding Your Requirements", desc: "We take the time to deeply understand your business goals, culture, and growth plans. This insight allows us to shape a targeted hiring strategy that aligns talent acquisition with your long-term objectives." },
+  { title: "Role and Requirement Analysis", desc: "A successful hiring strategy begins with clarity. We work closely with your team to define the responsibilities, experience, and must-have skills for each role, ensuring that every candidate is evaluated against the right criteria." },
+  { title: "Talent Sourcing Strategy", desc: "We proactively identify and engage top talent through multiple channels, including online job portals, professional social media platforms, and trusted industry networks. By leveraging these diverse sources, we ensure access to a wide pool of qualified candidates, strengthen our employer brand visibility, and build long-term relationships with potential hires." },
+  { title: "Screening and Shortlisting", desc: "We carefully evaluate candidates based on their skills, experience, and cultural alignment. Our process ensures that shortlisted individuals not only meet the technical requirements of the role but also fit seamlessly into the organizational values and work environment. This balanced approach helps us identify talent that is both capable and committed, setting the stage for long-term success." },
+  { title: "Recruiter Assessment", desc: "Our recruiters conduct initial assessments to evaluate both technical expertise and interpersonal capabilities. This dual focus ensures that candidates not only possess the required knowledge and skills but also demonstrate strong communication, collaboration, and adaptability. By balancing technical proficiency with interpersonal strengths, we identify individuals who are well-rounded and prepared to thrive within the organization." },
+  { title: "Interview Coordination", desc: "We oversee the entire interview scheduling process, ensuring seamless communication between candidates and hiring teams. By managing logistics, aligning availability, and providing timely updates, we create a smooth and professional experience that reflects positively on our organization and keeps the recruitment journey efficient and transparent." },
+  { title: "Offer Management", desc: "We support both the organization and the candidate throughout the negotiation process, ensuring transparency and fairness. By facilitating open communication and aligning expectations, we help both parties reach a mutually beneficial agreement. This approach strengthens trust, enhances candidate experience, and secures successful offer acceptance." },
+  { title: "On boarding Support", desc: "We provide comprehensive on boarding assistance to ensure a smooth transition for new hires. From managing documentation and compliance requirements to facilitating introductions and orientation, we create a seamless joining experience. This structured support helps employees feel welcomed, informed, and ready to contribute from day one." },
 ];
 
 const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
@@ -94,7 +98,96 @@ const staggerContainer: Variants = {
   }
 };
 
+const ProcessCard = ({ step, index }: { step: { title: string, desc: string }, index: number }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <motion.div variants={fadeInUp} className="group">
+      <div
+        className={`relative bg-white border border-navy/5 rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer ${isExpanded
+          ? 'shadow-2xl'
+          : 'shadow-md hover:shadow-xl hover:-translate-y-1'
+          }`}
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        {/* Colored left accent bar */}
+        <div className={`absolute left-0 top-0 bottom-0 w-1.5 transition-all duration-500 ${isExpanded ? 'bg-gold' : 'bg-navy/10 group-hover:bg-gold/50'
+          }`} />
+
+        {/* Card Header - always visible */}
+        <div className="flex items-center gap-6 px-8 py-6 pl-10">
+          <span className="text-4xl font-display font-black text-gold/20 group-hover:text-gold/40 transition-colors leading-none select-none shrink-0 w-12 text-center">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <div className="flex-grow">
+            <h4 className="text-lg sm:text-xl font-display font-bold text-navy leading-tight tracking-tight">
+              {step.title}
+            </h4>
+          </div>
+
+          {/* Expand toggle icon */}
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-500 ${isExpanded ? 'bg-gold text-navy' : 'bg-navy/5 text-navy group-hover:bg-navy/10'
+            }`}>
+            <ArrowUpRight size={16} className={`transition-transform duration-500 ${isExpanded ? 'rotate-90' : ''}`} />
+          </div>
+        </div>
+
+        {/* Expandable Content */}
+        <div
+          className={`transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+            }`}
+        >
+          <div className="px-8 pb-8 pl-10 border-t border-navy/5">
+            <div className="flex gap-6 pt-6">
+              <div className="w-12 shrink-0" />{/* spacer to align with title */}
+              <p className="text-navy/75 text-sm sm:text-base leading-relaxed font-semibold">
+                {step.desc}
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 mt-6 pl-18">
+              <div className="flex gap-1.5">
+                {[1, 2, 3].map(d => <div key={d} className="w-1.5 h-1.5 rounded-full bg-gold" />)}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Collapsed preview — shows first line of text */}
+        {!isExpanded && (
+          <div className="px-8 pb-6 pl-10">
+            <div className="flex gap-6">
+              <div className="w-12 shrink-0" />
+              <p className="text-navy/50 text-sm leading-relaxed font-medium line-clamp-2">
+                {step.desc}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Footer row */}
+        <div className={`flex items-center justify-end px-8 py-3 pl-10 border-t border-navy/5 ${isExpanded ? 'bg-gold/5' : 'bg-transparent'
+          }`}>
+          <button
+            className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] transition-colors duration-300 focus:outline-none"
+            style={{ color: isExpanded ? '#D4AF37' : '#1e293b' }}
+            onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
+          >
+            {isExpanded ? "Show less" : "Read more"}
+            <ArrowUpRight size={12} className={`transition-transform duration-500 ${isExpanded ? 'rotate-90' : ''}`} />
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const AboutSection = () => {
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
+  const isHomePage = location.pathname === "/";
+
   return (
     <div className="bg-background overflow-hidden">
       {/* Company Story */}
@@ -114,7 +207,7 @@ const AboutSection = () => {
               <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-gold/30 rounded-tl-3xl" />
               <div className="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-teal/30 rounded-br-3xl" />
 
-              <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-border/50 relative z-10 mx-auto max-w-lg lg:max-w-none">
+              <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-border/50 relative z-10 mx-auto max-w-lg lg:max-w-xl">
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1 }}
@@ -185,39 +278,41 @@ const AboutSection = () => {
         </div>
       </section>
 
-      {/* Professional Team Imagery Section */}
-      <section className="py-16 bg-background relative z-10 w-full px-6 md:px-10 lg:px-20 xl:px-24">
-        <div className="grid md:grid-cols-2 gap-8 items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=1200"
-              alt="Professional Business Woman Working on Laptop at Desk"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-            <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
-              alt="Close-up Smiley People Working Together"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-            <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
-          </motion.div>
-        </div>
-      </section>
+      {/* Professional Team Imagery Section - Hidden on About page per user request */}
+      {!isAboutPage && (
+        <section className="py-16 bg-background relative z-10 w-full px-6 md:px-10 lg:px-20 xl:px-24">
+          <div className="grid md:grid-cols-2 gap-8 items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=1200"
+                alt="Professional Business Woman Working on Laptop at Desk"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200"
+                alt="Team Discussing Strategies at Table"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Vision & Mission Sections */}
       <section className="relative py-20 overflow-hidden bg-navy">
@@ -265,184 +360,190 @@ const AboutSection = () => {
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="py-24 bg-surface/50 relative">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
-          <SectionTitle label="The Foundation" title="Our Core Values" />
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 xl:gap-8 mt-16"
-          >
-            {values.map((v, i) => (
-              <motion.div
-                key={v.title}
-                variants={fadeInUp}
-                whileHover={{ y: -12 }}
-                className="relative bg-card rounded-2xl p-8 xl:p-10 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-navy/5 group hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:border-gold/20 transition-all duration-500 overflow-hidden"
+      {/* Core Values - About page only */}
+      {!isHomePage && (
+        <section className="py-24 bg-surface/50 relative">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
+          <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
+            <SectionTitle label="The Foundation" title="Our Core Values" />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={staggerContainer}
+              className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 xl:gap-8 mt-16"
+            >
+              {values.map((v, i) => {
+                const Icon = v.icon;
+                const isLastOnSm = i === 4;
+                return (
+                  <motion.div
+                    key={v.title}
+                    variants={fadeInUp}
+                    whileHover={{ y: -12 }}
+                    className={`relative bg-card rounded-2xl p-8 xl:p-10 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-navy/5 group hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:border-gold/20 transition-all duration-500 overflow-hidden ${isLastOnSm ? "sm:col-span-2 lg:col-span-1" : ""
+                      }`}
+                  >
+                    {/* Glossy Overlay effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Decorative Elements */}
+                    <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-transparent group-hover:border-navy/20 rounded-tl-2xl transition-colors duration-500" />
+                    <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-transparent group-hover:border-navy/20 rounded-br-2xl transition-colors duration-500" />
+
+                    <div className="w-16 h-16 xl:w-20 xl:h-20 mx-auto rounded-2xl gradient-teal flex items-center justify-center mb-6 xl:mb-8 group-hover:scale-110 transition-transform duration-500 shadow-xl relative z-10">
+                      <Icon className="text-accent-foreground" size={window.innerWidth > 1280 ? 36 : 28} />
+                    </div>
+                    <h4 className="font-display font-bold text-foreground text-xl xl:text-2xl mb-4 group-hover:text-navy transition-colors relative z-10">{v.title}</h4>
+                    <p className="text-foreground text-sm xl:text-base leading-relaxed font-medium group-hover:text-foreground/90 transition-colors relative z-10">{v.desc}</p>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* Recruitment Process Sleek - About page only */}
+      {!isHomePage && (
+        <section className="py-24 bg-background">
+          <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
+            <SectionTitle label="The Roadmap" title="Recruitment Intelligence" />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 gap-4 xl:gap-6"
+            >
+              {processSteps.map((step, i) => (
+                <ProcessCard key={step.title} step={step} index={i} />
+              ))}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              className="mt-20 text-center"
+            >
+              <Link
+                to="/recruitment-process"
+                className="inline-flex items-center gap-3 bg-navy text-primary-foreground px-10 py-5 rounded-full font-bold hover:bg-navy/90 hover:scale-105 transition-all shadow-xl group tracking-wide"
               >
-                {/* Glossy Overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                EXAMINE OUR FULL PROCESS
+                <Zap size={18} className="group-hover:rotate-12 transition-transform text-gold fill-gold" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
-                {/* Decorative Elements */}
-                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-transparent group-hover:border-navy/20 rounded-tl-2xl transition-colors duration-500" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-transparent group-hover:border-navy/20 rounded-br-2xl transition-colors duration-500" />
+      {/* Team Pillars - About page only */}
+      {!isHomePage && (
+        <section className="py-16 gradient-navy text-primary-foreground">
+          <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
+            <div className="text-center mb-16">
+              <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Our Strength</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">Built on Expertise</h2>
+              <div className="w-16 h-1 gradient-gold mx-auto rounded-full" />
+            </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-3 gap-12"
+            >
+              {[
+                { icon: Star, title: "Quality of People", desc: "Our recruiters aren't just HR professionals; they are industry veterans with deep domain technical expertise." },
+                { icon: Globe, title: "Global Network", desc: "Access to an international talent pool that transcends geographic boundaries and local limitations." },
+                { icon: Zap, title: "Agile Service", desc: "A bespoke, responsive recruitment lifecycle designed to scale with your organization's immediate needs." },
+              ].map((p, i) => {
+                const Icon = p.icon;
+                return (
+                  <motion.div key={p.title} variants={fadeInUp} className="text-center group">
+                    <div className="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
+                      <Icon className="text-gold group-hover:text-navy transition-colors" size={36} />
+                    </div>
+                    <h4 className="font-display font-bold text-2xl mb-4">{p.title}</h4>
+                    <p className="text-primary-foreground/70 leading-relaxed font-semibold italic">{p.desc}</p>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
-                <div className="w-16 h-16 xl:w-20 xl:h-20 mx-auto rounded-2xl gradient-teal flex items-center justify-center mb-6 xl:mb-8 group-hover:scale-110 transition-transform duration-500 shadow-xl relative z-10">
-                  <v.icon className="text-accent-foreground" size={window.innerWidth > 1280 ? 36 : 28} />
-                </div>
-                <h4 className="font-display font-bold text-foreground text-xl xl:text-2xl mb-4 group-hover:text-navy transition-colors relative z-10">{v.title}</h4>
-                <p className="text-foreground text-sm xl:text-base leading-relaxed font-medium group-hover:text-foreground/90 transition-colors relative z-10">{v.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      {/* Testimonials - Hidden on About page per user request */}
+      {!isAboutPage && (
+        <section className="py-16">
+          <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
+            <SectionTitle label="Success Stories" title="Partner Feedback" />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-3 gap-8"
+            >
+              {[
+                { name: "Rajesh Kumar", role: "CEO, TechVista", text: "Nautilus International didn't just find us employees; they found us partners. Their deep understanding of our company culture was remarkable." },
+                { name: "Sarah Jenkins", role: "HR head, GlobalFlow", text: "The executive search team provided a level of discretion and quality that we haven't found elsewhere in 10 years." },
+                { name: "Michael Chen", role: "MD, Innovate Asia", text: "Speed and quality are often at odds. Nautilus managed to deliver both for our critical expansion project." },
+              ].map((t) => (
+                <motion.div
+                  key={t.name}
+                  variants={fadeInUp}
+                  className="bg-card p-10 rounded-2xl border border-border shadow-sm hover:shadow-xl transition-all border-b-4 border-b-teal"
+                >
+                  <p className="text-muted-foreground italic mb-6 leading-relaxed">"{t.text}"</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full gradient-navy flex items-center justify-center text-gold font-bold">
+                      {t.name[0]}
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-foreground">{t.name}</h5>
+                      <p className="text-teal text-sm font-semibold">{t.role}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
-      {/* Recruitment Process Sleek */}
-      <section className="py-24 bg-background">
+      {/* CTA */}
+      <section className="py-10 bg-surface">
         <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
-          <SectionTitle label="The Roadmap" title="Recruitment Intelligence" />
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 max-w-7xl mx-auto"
-          >
-            {processSteps.map((step, i) => (
-              <motion.div key={step.title} variants={fadeInUp} className="relative group h-full">
-                <div className="gradient-navy p-[1px] rounded-3xl h-full shadow-lg group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-500">
-                  <div className="bg-card rounded-[1.7rem] p-8 xl:p-10 h-full border border-border/10 flex flex-col justify-start relative z-10 overflow-hidden">
-                    {/* Circle background pattern */}
-                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/5 rounded-full blur-2xl group-hover:bg-gold/10 transition-colors" />
-
-                    <span className="block text-5xl xl:text-6xl font-display font-bold text-gold/10 mb-6 group-hover:text-gold/30 transition-colors">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h4 className="text-lg xl:text-xl font-bold text-foreground mb-4 leading-tight uppercase tracking-wider relative z-10">{step.title}</h4>
-                    <p className="text-foreground text-sm xl:text-base leading-relaxed font-bold relative z-10">{step.desc}</p>
-                  </div>
-                </div>
-                {i < 3 && (
-                  <div className="absolute top-1/2 -right-4 translate-x-1/2 -translate-y-1/2 hidden lg:block text-gold/20 z-0 group-hover:text-gold/40 transition-colors">
-                    <Zap size={24} />
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
-            className="mt-20 text-center"
+            transition={{ duration: 0.7 }}
+            className="w-full gradient-navy px-10 py-8 md:py-10 rounded-2xl shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6"
           >
-            <Link
-              to="/recruitment-process"
-              className="inline-flex items-center gap-3 bg-navy text-primary-foreground px-10 py-5 rounded-full font-bold hover:bg-navy/90 hover:scale-105 transition-all shadow-xl group tracking-wide"
-            >
-              EXAMINE OUR FULL PROCESS
-              <Zap size={18} className="group-hover:rotate-12 transition-transform text-gold fill-gold" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+            {/* Decorative blobs */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-teal/20 rounded-full blur-[100px] -mr-32 -mt-32 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-[100px] -ml-32 -mb-32 pointer-events-none" />
 
-
-      {/* Team Pillars */}
-      <section className="py-16 gradient-navy text-primary-foreground">
-        <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
-          <div className="text-center mb-16">
-            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Our Strength</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">Built on Expertise</h2>
-            <div className="w-16 h-1 gradient-gold mx-auto rounded-full" />
-          </div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-12"
-          >
-            {[
-              { icon: Star, title: "Quality of People", desc: "Our recruiters aren't just HR professionals; they are industry veterans with deep domain technical expertise." },
-              { icon: Globe, title: "Global Network", desc: "Access to an international talent pool that transcends geographic boundaries and local limitations." },
-              { icon: Zap, title: "Agile Service", desc: "A bespoke, responsive recruitment lifecycle designed to scale with your organization's immediate needs." },
-            ].map((p) => (
-              <motion.div key={p.title} variants={fadeInUp} className="text-center group">
-                <div className="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
-                  <p.icon className="text-gold group-hover:text-navy transition-colors" size={36} />
-                </div>
-                <h4 className="font-display font-bold text-2xl mb-4">{p.title}</h4>
-                <p className="text-primary-foreground/70 leading-relaxed">{p.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16">
-        <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
-          <SectionTitle label="Success Stories" title="Partner Feedback" />
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            {[
-              { name: "Rajesh Kumar", role: "CEO, TechVista", text: "Nautilus International didn't just find us employees; they found us partners. Their deep understanding of our company culture was remarkable." },
-              { name: "Sarah Jenkins", role: "HR head, GlobalFlow", text: "The executive search team provided a level of discretion and quality that we haven't found elsewhere in 10 years." },
-              { name: "Michael Chen", role: "MD, Innovate Asia", text: "Speed and quality are often at odds. Nautilus managed to deliver both for our critical expansion project." },
-            ].map((t) => (
-              <motion.div
-                key={t.name}
-                variants={fadeInUp}
-                className="bg-card p-10 rounded-2xl border border-border shadow-sm hover:shadow-xl transition-all border-b-4 border-b-teal"
-              >
-                <p className="text-muted-foreground italic mb-6 leading-relaxed">"{t.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full gradient-navy flex items-center justify-center text-gold font-bold">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-foreground">{t.name}</h5>
-                    <p className="text-teal text-sm font-semibold">{t.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-surface">
-        <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto gradient-navy p-12 rounded-[2rem] shadow-2xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-teal/20 rounded-full blur-[100px] -mr-32 -mt-32" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-[100px] -ml-32 -mb-32" />
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-6">Your Transformation Starts Here</h2>
-              <p className="text-primary-foreground/80 text-lg mb-10">
+            {/* Text */}
+            <div className="relative z-10 text-center md:text-left">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-primary-foreground mb-2">
+                Your Transformation Starts Here
+              </h2>
+              <p className="text-primary-foreground/75 text-sm sm:text-base leading-relaxed max-w-2xl">
                 Whether you're a visionary company or an ambitious professional, let's create your success story together.
               </p>
+            </div>
+
+            {/* Button */}
+            <div className="relative z-10 shrink-0">
               <Link
                 to="/contact"
-                className="gradient-teal text-accent-foreground px-10 py-4 rounded-full font-bold tracking-wide hover:scale-105 transition-all shadow-xl inline-block"
+                className="gradient-teal text-accent-foreground px-8 py-3.5 rounded-full font-bold tracking-wide hover:scale-105 transition-all shadow-xl inline-block whitespace-nowrap"
               >
                 Submit Your CV
               </Link>

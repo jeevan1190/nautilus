@@ -63,7 +63,7 @@ const Contact = () => {
             <Navbar />
             <main className="flex-grow">
                 {/* Cinematic Header */}
-                <header className="relative h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
+                <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
                     <motion.div
                         initial={{ scale: 1.1, filter: "brightness(0.3)" }}
                         animate={{ scale: 1, filter: "brightness(0.5)" }}
