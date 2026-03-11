@@ -57,9 +57,9 @@ const partnerReasons = [
 ];
 
 const differentiators = [
-  { val: 98, suffix: "%", label: "Placement Success" },
-  { val: 20, suffix: "+", label: "Years of Trust" },
-  { val: 500, suffix: "+", label: "Global Clients" },
+  { val: 88, suffix: "%", label: "Placement Success" },
+  { val: 10, suffix: "+", label: "Years of Trust" },
+  { val: 100, suffix: "+", label: "Global Clients" },
   { val: 15, suffix: "+", label: "Sector Verticals" },
 ];
 

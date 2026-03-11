@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-gray-200 pt-4 pb-4 overflow-hidden text-foreground">
+    <footer className="relative bg-white pt-4 pb-4 overflow-hidden text-foreground">
       {/* Decorative High-End Elements */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gold/[0.03] rounded-full blur-[120px] pointer-events-none" />

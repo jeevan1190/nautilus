@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RecruitmentProcessSection from "@/components/sections/RecruitmentProcessSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
+import RecruitmentProcessCards from "@/components/sections/RecruitmentProcessCards";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Shield, Zap, TrendingUp, Target } from "lucide-react";
@@ -92,10 +93,6 @@ const RecruitmentProcess = () => {
                     </div>
                 </section>
 
-                <div className="bg-surface/30">
-                    <RecruitmentProcessSection />
-                </div>
-
                 {/* Professional Imagery Section */}
                 <section className="py-16 bg-background relative z-10 w-full px-6 md:px-10 lg:px-20 xl:px-24">
                     <div className="grid md:grid-cols-2 gap-8 items-center justify-center">
@@ -129,6 +126,8 @@ const RecruitmentProcess = () => {
                         </motion.div>
                     </div>
                 </section>
+
+                <RecruitmentProcessCards />
 
                 <div className="bg-background">
                     <WhyUsSection />

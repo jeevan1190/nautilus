@@ -39,8 +39,8 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled
           // reduced vertical padding for a slimmer bar
-          ? "bg-gray-200/90 shadow-lg py-1.5 md:py-2 backdrop-blur-md border-b border-gray-300"
-          : "bg-gray-200 py-3 md:py-4"
+          ? "bg-white/90 shadow-lg py-1.5 md:py-2 backdrop-blur-md border-b border-gray-200"
+          : "bg-white py-3 md:py-4"
           }`}
       >
         <div className="w-full flex items-center justify-between px-4 md:px-8 lg:px-12">
@@ -122,7 +122,7 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-fit max-h-screen rounded-bl-2xl w-[60%] min-w-[220px] z-50 bg-gray-200/90 backdrop-blur-2xl border-l border-b border-gray-300 shadow-2xl transition-transform duration-500 ease-in-out flex flex-col pt-20 px-6 pb-6 overflow-y-auto ${mobileOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-0 right-0 h-fit max-h-screen rounded-bl-2xl w-[60%] min-w-[220px] z-50 bg-white backdrop-blur-2xl border-l border-b border-gray-200 shadow-2xl transition-transform duration-500 ease-in-out flex flex-col pt-20 px-6 pb-6 overflow-y-auto ${mobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <ul className="flex flex-col items-start gap-1">

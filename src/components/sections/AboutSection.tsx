@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Users, Globe, Heart, Lightbulb, Shield, Star, Target, Award, CheckCircle2, Zap, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Users, Globe, Heart, Lightbulb, Shield, Star, Target, Award, CheckCircle2, Zap } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 
@@ -12,17 +12,6 @@ const values = [
   { icon: Lightbulb, title: "Innovation", desc: "We embrace cutting-edge technology and progressive ideas to stay ahead of the curve and offer the best solutions for our clients." },
   { icon: Heart, title: "Inclusivity", desc: "We are committed to promoting diversity in talent acquisition, creating a more equitable and varied workforce." },
   { icon: Star, title: "Excellence", desc: "We strive for the highest standards in our services, consistently delivering exceptional results and value to our partners." },
-];
-
-const processSteps = [
-  { title: "Understanding Your Requirements", desc: "We take the time to deeply understand your business goals, culture, and growth plans. This insight allows us to shape a targeted hiring strategy that aligns talent acquisition with your long-term objectives." },
-  { title: "Role and Requirement Analysis", desc: "A successful hiring strategy begins with clarity. We work closely with your team to define the responsibilities, experience, and must-have skills for each role, ensuring that every candidate is evaluated against the right criteria." },
-  { title: "Talent Sourcing Strategy", desc: "We proactively identify and engage top talent through multiple channels, including online job portals, professional social media platforms, and trusted industry networks. By leveraging these diverse sources, we ensure access to a wide pool of qualified candidates, strengthen our employer brand visibility, and build long-term relationships with potential hires." },
-  { title: "Screening and Shortlisting", desc: "We carefully evaluate candidates based on their skills, experience, and cultural alignment. Our process ensures that shortlisted individuals not only meet the technical requirements of the role but also fit seamlessly into the organizational values and work environment. This balanced approach helps us identify talent that is both capable and committed, setting the stage for long-term success." },
-  { title: "Recruiter Assessment", desc: "Our recruiters conduct initial assessments to evaluate both technical expertise and interpersonal capabilities. This dual focus ensures that candidates not only possess the required knowledge and skills but also demonstrate strong communication, collaboration, and adaptability. By balancing technical proficiency with interpersonal strengths, we identify individuals who are well-rounded and prepared to thrive within the organization." },
-  { title: "Interview Coordination", desc: "We oversee the entire interview scheduling process, ensuring seamless communication between candidates and hiring teams. By managing logistics, aligning availability, and providing timely updates, we create a smooth and professional experience that reflects positively on our organization and keeps the recruitment journey efficient and transparent." },
-  { title: "Offer Management", desc: "We support both the organization and the candidate throughout the negotiation process, ensuring transparency and fairness. By facilitating open communication and aligning expectations, we help both parties reach a mutually beneficial agreement. This approach strengthens trust, enhances candidate experience, and secures successful offer acceptance." },
-  { title: "On boarding Support", desc: "We provide comprehensive on boarding assistance to ensure a smooth transition for new hires. From managing documentation and compliance requirements to facilitating introductions and orientation, we create a seamless joining experience. This structured support helps employees feel welcomed, informed, and ready to contribute from day one." },
 ];
 
 const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
@@ -72,10 +61,10 @@ const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => 
 };
 
 const stats = [
-  { label: "Years Experience", value: 20, suffix: "+" },
-  { label: "Placements Made", value: 5000, suffix: "+" },
-  { label: "Global Partners", value: 200, suffix: "+" },
-  { label: "Success Rate", value: 98, suffix: "%" },
+  { label: "Years Experience", value: 10, suffix: "+" },
+  { label: "Placements Made", value: 2000, suffix: "+" },
+  { label: "Global Partners", value: 100, suffix: "+" },
+  { label: "Success Rate", value: 88, suffix: "%" },
 ];
 
 const fadeInUp: Variants = {
@@ -96,91 +85,6 @@ const staggerContainer: Variants = {
       delayChildren: 0.2
     }
   }
-};
-
-const ProcessCard = ({ step, index }: { step: { title: string, desc: string }, index: number }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  return (
-    <motion.div variants={fadeInUp} className="group">
-      <div
-        className={`relative bg-white border border-navy/5 rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer ${isExpanded
-          ? 'shadow-2xl'
-          : 'shadow-md hover:shadow-xl hover:-translate-y-1'
-          }`}
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
-        {/* Colored left accent bar */}
-        <div className={`absolute left-0 top-0 bottom-0 w-1.5 transition-all duration-500 ${isExpanded ? 'bg-gold' : 'bg-navy/10 group-hover:bg-gold/50'
-          }`} />
-
-        {/* Card Header - always visible */}
-        <div className="flex items-center gap-6 px-8 py-6 pl-10">
-          <span className="text-4xl font-display font-black text-gold/20 group-hover:text-gold/40 transition-colors leading-none select-none shrink-0 w-12 text-center">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-
-          <div className="flex-grow">
-            <h4 className="text-lg sm:text-xl font-display font-bold text-navy leading-tight tracking-tight">
-              {step.title}
-            </h4>
-          </div>
-
-          {/* Expand toggle icon */}
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-500 ${isExpanded ? 'bg-gold text-navy' : 'bg-navy/5 text-navy group-hover:bg-navy/10'
-            }`}>
-            <ArrowUpRight size={16} className={`transition-transform duration-500 ${isExpanded ? 'rotate-90' : ''}`} />
-          </div>
-        </div>
-
-        {/* Expandable Content */}
-        <div
-          className={`transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-            }`}
-        >
-          <div className="px-8 pb-8 pl-10 border-t border-navy/5">
-            <div className="flex gap-6 pt-6">
-              <div className="w-12 shrink-0" />{/* spacer to align with title */}
-              <p className="text-navy/75 text-sm sm:text-base leading-relaxed font-semibold">
-                {step.desc}
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2 mt-6 pl-18">
-              <div className="flex gap-1.5">
-                {[1, 2, 3].map(d => <div key={d} className="w-1.5 h-1.5 rounded-full bg-gold" />)}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Collapsed preview — shows first line of text */}
-        {!isExpanded && (
-          <div className="px-8 pb-6 pl-10">
-            <div className="flex gap-6">
-              <div className="w-12 shrink-0" />
-              <p className="text-navy/50 text-sm leading-relaxed font-medium line-clamp-2">
-                {step.desc}
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Footer row */}
-        <div className={`flex items-center justify-end px-8 py-3 pl-10 border-t border-navy/5 ${isExpanded ? 'bg-gold/5' : 'bg-transparent'
-          }`}>
-          <button
-            className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] transition-colors duration-300 focus:outline-none"
-            style={{ color: isExpanded ? '#D4AF37' : '#1e293b' }}
-            onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
-          >
-            {isExpanded ? "Show less" : "Read more"}
-            <ArrowUpRight size={12} className={`transition-transform duration-500 ${isExpanded ? 'rotate-90' : ''}`} />
-          </button>
-        </div>
-      </div>
-    </motion.div>
-  );
 };
 
 const AboutSection = () => {
@@ -249,18 +153,24 @@ const AboutSection = () => {
               </motion.div>
               <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6 leading-[1.1]">
                 Nautilus International <br />
-                <span className="text-gradient-gold italic">Catalysts for Global Success</span>
+                <span className="text-gradient-gold italic">Catalysts for Success</span>
               </motion.h2>
               <motion.div variants={fadeInUp} className="space-y-4 text-foreground text-sm md:text-base leading-relaxed font-bold">
                 <p>
                   At <span className="text-foreground font-semibold">Nautilus International</span>, we understand that innovation thrives through collaboration and the collective
                   power of people. Your goal is to challenge the status quo, pioneer new solutions, and propel industries into
-                  the future.
+                  the future. Our mission is to connect you with the exceptional talent that can make that vision a reality.
                 </p>
                 <p>
-                  Our mission is to connect you with the exceptional talent that can make that vision a reality.
-                  We harness advanced recruitment technology to enhance your hiring process, expand your outreach, and
-                  create a more inclusive talent pool.
+                  We harness advanced recruitment technology to enhance your hiring process, expand your outreach, and 
+                  create a more inclusive talent pool. By merging intelligent technology with human expertise, we ensure 
+                  that each hire is not only a perfect match for your organization but also a driving force for growth, 
+                  creativity, and sustainable success.
+                </p>
+                <p>
+                  Partnering with Nautilus International means transcending the conventional approach to recruitment. 
+                  You are not just filling vacancies; you are assembling dynamic teams that transform potential into 
+                  achievement. Let us help you forge the future you envision through the right talent.
                 </p>
               </motion.div>
               <motion.div variants={fadeInUp} className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-border/50">
@@ -343,7 +253,7 @@ const AboutSection = () => {
               </div>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-primary-foreground mb-6">Our Vision</h3>
               <p className="text-primary-foreground/70 text-lg leading-relaxed font-bold italic">
-                "To be the leading global catalyst for transformation, empowering organizations to build world-class teams that redefine industry standards and exceed all expectations."
+                "To redefine the future of work by connecting organizations with exceptional talent that drives innovation, growth, and sustainable success."
               </p>
             </motion.div>
 
@@ -353,7 +263,7 @@ const AboutSection = () => {
               </div>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-primary-foreground mb-6">Our Mission</h3>
               <p className="text-primary-foreground/70 text-lg leading-relaxed font-bold">
-                "To bridge the gap between ambition and achievement by identifying exceptional talent and leveraging intelligent recruitment technology to drive sustainable corporate success."
+                "We combine advanced recruitment technology with human expertise to deliver HR solutions that empower organizations and guide professionals in their career journeys. As a dependable partner, we ensure every solution we provide contributes to creativity, progress, and long-term value."
               </p>
             </motion.div>
           </motion.div>
@@ -404,37 +314,71 @@ const AboutSection = () => {
         </section>
       )}
 
-      {/* Recruitment Process Sleek - About page only */}
+      {/* Our Team & Our Edge Section - About page only */}
       {!isHomePage && (
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-background relative overflow-hidden">
+          <div className="absolute top-1/2 left-0 w-72 h-72 bg-teal/5 rounded-full blur-[100px] -ml-36 pointer-events-none" />
           <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
-            <SectionTitle label="The Roadmap" title="Recruitment Intelligence" />
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-4 xl:gap-6"
-            >
-              {processSteps.map((step, i) => (
-                <ProcessCard key={step.title} step={step} index={i} />
-              ))}
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="mt-20 text-center"
-            >
-              <Link
-                to="/recruitment-process"
-                className="inline-flex items-center gap-3 bg-navy text-primary-foreground px-10 py-5 rounded-full font-bold hover:bg-navy/90 hover:scale-105 transition-all shadow-xl group tracking-wide"
+            <div className="max-w-6xl mx-auto">
+              <SectionTitle label="The People" title="Our Team And Our Edge" />
+              
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={staggerContainer}
+                className="space-y-12"
               >
-                EXAMINE OUR FULL PROCESS
-                <Zap size={18} className="group-hover:rotate-12 transition-transform text-gold fill-gold" />
-              </Link>
-            </motion.div>
+                <motion.div 
+                  variants={fadeInUp} 
+                  className="bg-navy p-10 md:p-16 lg:p-20 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border border-white/10"
+                >
+                  {/* Decorative background effects */}
+                  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] -mr-64 -mt-64 group-hover:bg-gold/10 transition-colors duration-1000 pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal/5 rounded-full blur-[120px] -ml-64 -mb-64 group-hover:bg-teal/10 transition-colors duration-1000 pointer-events-none" />
+                  
+                  <div className="relative z-10 max-w-4xl mx-auto">
+                    <div className="space-y-8 text-primary-foreground/90 text-lg md:text-xl leading-relaxed font-medium text-center">
+                      <p className="drop-shadow-sm">
+                        <span className="text-gold font-bold text-2xl md:text-3xl block mb-6">Our Team:</span>
+                        Our Management and Execution Team brings together over 20 years of collective professional experience, 
+                        ensuring consistent value across every client engagement and business process. We are a team of seasoned 
+                        consultants with expertise spanning multiple sectors.
+                      </p>
+                      <p className="drop-shadow-sm">
+                        Supporting our core team is a non-executive advisory panel of senior industry experts. Their insights and 
+                        networks extend our global reach and strengthen our ability to deliver solutions across diverse markets.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div variants={fadeInUp} className="pt-16 border-t border-border/50 max-w-4xl mx-auto">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-navy mb-6">Our Edge</h3>
+                  <p className="text-foreground text-lg mb-8 font-semibold">We believe our advantage lies in three pillars:</p>
+                  
+                  <ul className="space-y-4">
+                    {[
+                      { title: "Quality of People", desc: "Experienced professionals committed to excellence" },
+                      { title: "Global Network", desc: "Connections that open doors worldwide" },
+                      { title: "Personalized Service", desc: "Tailored solutions that fit each client’s unique needs" },
+                    ].map((item) => (
+                      <li key={item.title} className="flex items-start gap-4">
+                        <div className="mt-1.5 w-2 h-2 rounded-full bg-gold shrink-0" />
+                        <p className="text-foreground text-base md:text-lg">
+                          <span className="font-bold text-navy">{item.title}</span> – {item.desc}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="mt-10 text-foreground text-base md:text-lg leading-relaxed font-bold italic border-l-4 border-gold pl-6">
+                    Our consultants deliver recruitment expertise on the ground, with a deep understanding of multicultural 
+                    environments and local market dynamics.
+                  </p>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
       )}
