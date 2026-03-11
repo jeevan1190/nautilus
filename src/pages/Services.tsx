@@ -21,8 +21,11 @@ const Services = () => {
     return (
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
-            <main className="flex-grow">
-                <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+            {/* add a little padding at the top of the main area as a general safeguard against the fixed nav */}
+            <main className="flex-grow pt-4 md:pt-6">
+                {/* the top padding keeps the hero content below the fixed navbar so the "Our Expertise" badge
+                     isn’t hidden on page load or when scrolling */}
+                <header className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
                     <motion.div
                         initial={{ scale: 1.1, filter: "brightness(0.2)" }}
                         animate={{ scale: 1, filter: "brightness(0.4)" }}

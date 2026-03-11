@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
+// local logo asset
+// updated to new filename added by user
+import logo from "@/assets/MainLogo.png";
+
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -30,19 +34,23 @@ const Navbar = () => {
 
   return (
     <>
+      {/* force the navbar to use the project's primary colour (matches logo) instead
+          of the old navy gradient.  scrolled state still shrinks and adds shadow. */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled || location.pathname !== "/"
-          ? "gradient-navy shadow-lg py-2 md:py-3 backdrop-blur-md bg-opacity-95 border-b border-white/10"
-          : "bg-transparent py-4 md:py-5"
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled
+          // reduced vertical padding for a slimmer bar
+          ? "bg-gray-200/90 shadow-lg py-1.5 md:py-2 backdrop-blur-md border-b border-gray-300"
+          : "bg-gray-200 py-3 md:py-4"
           }`}
       >
         <div className="w-full flex items-center justify-between px-4 md:px-8 lg:px-12">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group transition-transform hover:scale-[1.01] z-50 shrink-0">
             <img
-              src="/logo.jpeg"
+              src={logo}
               alt="Nautilus International"
-              className="h-10 md:h-12 lg:h-14 w-auto object-contain bg-white/95 px-2 py-1 rounded-md shadow-sm"
+              // increased base height and added larger breakpoints for better responsiveness
+              className="h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 w-auto object-contain"
               onError={(e) => {
                 // Fallback text if image fails to load
                 const target = e.target as HTMLImageElement;
@@ -64,7 +72,7 @@ const Navbar = () => {
                     to={item.href}
                     className={`relative text-sm xl:text-[15px] tracking-wide uppercase font-semibold transition-all duration-200 py-1.5 px-3 rounded-md group ${isActive(item.href)
                       ? "text-gold bg-white/10"
-                      : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
+                      : "text-foreground hover:text-gold hover:bg-white/8"
                       }`}
                   >
                     {item.label}
@@ -92,7 +100,7 @@ const Navbar = () => {
 
           {/* Mobile Toggle */}
           <button
-            className="lg:hidden text-primary-foreground hover:text-gold transition-colors p-2 z-50 relative"
+            className="lg:hidden text-foreground hover:text-gold transition-colors p-2 z-50 relative"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -101,7 +109,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Backdrop */}
+      {/* spacer to offset the fixed navbar height so page headings aren’t hidden
+          (uses a value slightly larger than the tallest possible nav for safety) */}
+      <div className="h-16 md:h-20 w-full" aria-hidden="true" />
+
+      {/* Mobile Menu Backdrop */}s
       <div
         className={`lg:hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40 transition-opacity duration-300 ${mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
@@ -110,7 +122,7 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-fit max-h-screen rounded-bl-2xl w-[60%] min-w-[220px] z-50 bg-navy backdrop-blur-2xl border-l border-b border-white/10 shadow-2xl transition-transform duration-500 ease-in-out flex flex-col pt-20 px-6 pb-6 overflow-y-auto ${mobileOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-0 right-0 h-fit max-h-screen rounded-bl-2xl w-[60%] min-w-[220px] z-50 bg-gray-200/90 backdrop-blur-2xl border-l border-b border-gray-300 shadow-2xl transition-transform duration-500 ease-in-out flex flex-col pt-20 px-6 pb-6 overflow-y-auto ${mobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <ul className="flex flex-col items-start gap-1">
@@ -121,7 +133,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className={`text-base tracking-wide uppercase font-semibold transition-all block py-2 px-3 rounded-md ${isActive(item.href)
                   ? "text-gold bg-white/10"
-                  : "text-primary-foreground/90 hover:text-gold hover:bg-white/8"
+                  : "text-foreground hover:text-gold hover:bg-white/8"
                   }`}
               >
                 {item.label}
