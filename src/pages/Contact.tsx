@@ -188,62 +188,80 @@ const Contact = () => {
                                 >
                                     <motion.div
                                         variants={fadeInUp}
-                                        className="gradient-navy rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden group border border-white/5"
+                                        className="bg-navy rounded-[2.5rem] p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] relative overflow-hidden group border border-white/10"
                                     >
-                                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
+                                        <div className="absolute top-0 right-0 w-80 h-80 bg-gold/10 rounded-full blur-[100px] -mr-40 -mt-40 pointer-events-none group-hover:bg-gold/30 transition-all duration-700" />
+                                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal/10 rounded-full blur-[80px] -ml-32 -mb-32 pointer-events-none" />
 
-                                        <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-5 leading-tight">
-                                            The <span className="text-gold italic">Nautilus</span> HQ
-                                        </h2>
+                                        <div className="relative z-10">
+                                            <span className="inline-block text-[10px] font-black tracking-[0.4em] text-gold/80 uppercase mb-5 px-5 py-2 rounded-full bg-gold/10 border border-gold/30 shadow-sm backdrop-blur-md">
+                                                Elite Presence
+                                            </span>
+                                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-10 leading-tight">
+                                                The <span className="text-gradient-gold italic">Nautilus</span> HQ
+                                            </h2>
 
-                                        <div className="space-y-5">
-                                            {[
-                                                {
-                                                    icon: MapPin,
-                                                    label: "Headquarters",
-                                                    value: "Vishnu Capital, Office 214, Pune, India",
-                                                    detail: "City Pride School Lane, Chikhali - Moshi, 411062"
-                                                },
-                                                {
-                                                    icon: Phone,
-                                                    label: "Secure Digital Line",
-                                                    value: "+91 7410775779",
-                                                    isLink: true,
-                                                    href: "tel:+917410775779"
-                                                },
-                                                {
-                                                    icon: Mail,
-                                                    label: "Strategic Inquiry",
-                                                    value: "hr@nautilusinternational.in",
-                                                    isLink: true,
-                                                    href: "mailto:hr@nautilusinternational.in"
-                                                }
-                                            ].map((item, id) => (
-                                                <div key={id} className="flex gap-4 md:gap-5 group/item">
-                                                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover/item:bg-gold group-hover/item:text-navy transition-all duration-500 shadow-lg">
-                                                        <item.icon size={24} className="group-hover/item:scale-110 transition-transform" />
+                                            <div className="space-y-10">
+                                                {[
+                                                    {
+                                                        icon: MapPin,
+                                                        label: "Headquarters",
+                                                        value: "Vishnu Capital, Office 214, Pune, India",
+                                                        detail: "City Pride School Lane, Chikhali - Moshi, 411062",
+                                                        color: "text-rose-400",
+                                                        bg: "bg-gradient-to-br from-rose-500/20 to-rose-600/5",
+                                                        border: "border-rose-500/30"
+                                                    },
+                                                    {
+                                                        icon: Phone,
+                                                        label: "Secure Digital Line",
+                                                        value: "+91 7410775779",
+                                                        isLink: true,
+                                                        href: "tel:+917410775779",
+                                                        color: "text-emerald-400",
+                                                        bg: "bg-gradient-to-br from-emerald-500/20 to-emerald-600/5",
+                                                        border: "border-emerald-500/30"
+                                                    },
+                                                    {
+                                                        icon: Mail,
+                                                        label: "Strategic Inquiry",
+                                                        value: "hr@nautilusinternational.in",
+                                                        isLink: true,
+                                                        href: "mailto:hr@nautilusinternational.in",
+                                                        color: "text-sky-400",
+                                                        bg: "bg-gradient-to-br from-sky-500/20 to-sky-600/5",
+                                                        border: "border-sky-500/30"
+                                                    }
+                                                ].map((item, id) => (
+                                                    <div key={id} className="flex gap-6 md:gap-8 group/item">
+                                                        <div className={`w-16 h-16 rounded-2xl ${item.bg} border ${item.border} flex items-center justify-center shrink-0 group-hover/item:scale-110 group-hover/item:bg-white group-hover/item:text-navy transition-all duration-500 shadow-2xl overflow-hidden relative`}>
+                                                            <div className="absolute inset-0 opacity-0 group-hover/item:opacity-100 bg-gradient-to-br from-white to-white/50 transition-opacity" />
+                                                            <item.icon size={32} className={`${item.color} relative z-10 group-hover/item:text-navy transition-colors`} />
+                                                        </div>
+                                                        <div className="flex flex-col justify-center">
+                                                            <span className="text-[12px] md:text-sm font-black tracking-[0.2em] text-gold/60 mb-2 block uppercase font-display">{item.label}</span>
+                                                            {item.isLink ? (
+                                                                <a href={item.href} className="text-xl md:text-2xl font-bold text-white hover:text-gold transition-all block tracking-tight font-display">
+                                                                    {item.value}
+                                                                </a>
+                                                            ) : (
+                                                                <div className="text-xl md:text-2xl font-bold text-white leading-tight tracking-tight font-display">
+                                                                    {item.value}
+                                                                    {item.detail && <p className="text-sm md:text-base font-semibold text-white/50 mt-2 italic tracking-normal font-display">"{item.detail}"</p>}
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <span className="text-[10px] md:text-[11px] font-black tracking-[0.3em] text-white/30 mb-2 block uppercase">{item.label}</span>
-                                                        {item.isLink ? (
-                                                            <a href={item.href} className="text-sm md:text-base font-medium text-white hover:text-gold transition-colors block">
-                                                                {item.value}
-                                                            </a>
-                                                        ) : (
-                                                            <div className="text-sm md:text-base font-medium text-white leading-snug">
-                                                                {item.value}
-                                                                {item.detail && <p className="text-sm md:text-base font-bold text-white/40 mt-1 italic">"{item.detail}"</p>}
-                                                            </div>
-                                                        )}
+                                                ))}
+                                            </div>
+
+                                            <div className="mt-14 pt-10 border-t border-white/10">
+                                                <div className="flex items-center gap-6 text-white/60 text-base md:text-lg font-bold italic">
+                                                    <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shadow-inner border border-white/10">
+                                                        <Clock size={24} className="text-gold" />
                                                     </div>
+                                                    <span>Global Operations: 24/7 Strategic Support</span>
                                                 </div>
-                                            ))}
-                                        </div>
-
-                                        <div className="mt-6 pt-5 border-t border-white/5">
-                                            <div className="flex items-center gap-4 text-white/30 text-xs md:text-sm font-bold italic">
-                                                <Clock size={16} />
-                                                <span>Global Operations: 24/7 Strategic Support</span>
                                             </div>
                                         </div>
                                     </motion.div>
@@ -275,75 +293,97 @@ const Contact = () => {
                                     transition={{ duration: 0.8 }}
                                     className="lg:col-span-7"
                                 >
-                                    <div className="bg-white rounded-2xl p-5 md:p-8 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] relative overflow-hidden border border-navy/5">
-                                        <div className="absolute top-0 right-0 w-96 h-96 bg-navy/[0.02] rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
+                                    <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.12)] relative overflow-hidden border border-navy/5">
+                                        <div className="absolute top-0 right-0 w-full h-2 bg-gradient-to-r from-gold via-teal to-navy" />
+                                        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/[0.03] rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
+                                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/[0.03] rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
 
                                         <div className="relative z-10">
-                                            <h3 className="text-xl md:text-2xl font-display font-bold text-navy mb-2">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
-                                            <p className="text-navy drop-shadow-md text-xs md:text-sm font-bold mb-5 leading-relaxed">
-                                                Provide your details for a confidential executive consultation.
-                                            </p>
+                                            <div className="mb-10">
+                                                <h3 className="text-3xl md:text-4xl font-display font-bold text-navy mb-3">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
+                                                <p className="text-navy/60 text-sm md:text-base font-bold leading-relaxed max-w-xl">
+                                                    Provide your details for a confidential executive consultation. Our experts will process your inquiry with the highest priority.
+                                                </p>
+                                            </div>
 
-                                            <form onSubmit={handleSubmit} className="space-y-4">
-                                                <div className="grid md:grid-cols-2 gap-4">
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Full Name</label>
-                                                        <input
-                                                            type="text" name="name" required placeholder="Legal Name" value={form.name} onChange={handleChange}
-                                                            className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all"
-                                                        />
+                                            <form onSubmit={handleSubmit} className="space-y-6">
+                                                <div className="grid md:grid-cols-2 gap-6">
+                                                    <div className="space-y-2">
+                                                        <label className="text-xs md:text-sm font-black tracking-[0.1em] text-navy/60 ml-2 uppercase font-display">Full Name</label>
+                                                        <div className="relative group">
+                                                            <input
+                                                                type="text" name="name" required placeholder="Legal Name" value={form.name} onChange={handleChange}
+                                                                className="w-full bg-surface border-2 border-transparent rounded-2xl py-4 px-5 text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/30 focus:bg-white focus:shadow-[0_10px_30px_-10px_rgba(212,175,55,0.2)] transition-all shadow-inner font-display"
+                                                            />
+                                                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold/10 to-teal/10 opacity-0 group-focus-within:opacity-100 -z-10 blur-sm transition-opacity" />
+                                                        </div>
                                                     </div>
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Email Address</label>
-                                                        <input
-                                                            type="email" name="email" required placeholder="name@organization.com" value={form.email} onChange={handleChange}
-                                                            className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all"
-                                                        />
+                                                    <div className="space-y-2">
+                                                        <label className="text-xs md:text-sm font-black tracking-[0.1em] text-navy/60 ml-2 uppercase font-display">Email Address</label>
+                                                        <div className="relative group">
+                                                            <input
+                                                                type="email" name="email" required placeholder="name@organization.com" value={form.email} onChange={handleChange}
+                                                                className="w-full bg-surface border-2 border-transparent rounded-2xl py-4 px-5 text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/30 focus:bg-white focus:shadow-[0_10px_30px_-10px_rgba(212,175,55,0.2)] transition-all shadow-inner font-display"
+                                                            />
+                                                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold/10 to-teal/10 opacity-0 group-focus-within:opacity-100 -z-10 blur-sm transition-opacity" />
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-1">
-                                                    <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Phone Number</label>
-                                                    <input
-                                                        type="tel" name="phone" placeholder="+00 000 000 0000" value={form.phone} onChange={handleChange}
-                                                        className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all"
-                                                    />
+                                                <div className="space-y-2">
+                                                    <label className="text-xs md:text-sm font-black tracking-[0.1em] text-navy/60 ml-2 uppercase font-display">Phone Number</label>
+                                                    <div className="relative group">
+                                                        <input
+                                                            type="tel" name="phone" placeholder="+00 000 000 0000" value={form.phone} onChange={handleChange}
+                                                            className="w-full bg-surface border-2 border-transparent rounded-2xl py-4 px-5 text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/30 focus:bg-white focus:shadow-[0_10px_30px_-10px_rgba(212,175,55,0.2)] transition-all shadow-inner font-display"
+                                                        />
+                                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold/10 to-teal/10 opacity-0 group-focus-within:opacity-100 -z-10 blur-sm transition-opacity" />
+                                                    </div>
                                                 </div>
 
-                                                <div className="space-y-1">
-                                                    <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Upload CV / Portfolio (Optional)</label>
+                                                <div className="space-y-2">
+                                                    <label className="text-xs md:text-sm font-black tracking-[0.1em] text-navy/60 ml-2 uppercase font-display">Upload CV / Portfolio (Optional)</label>
                                                     <div className="relative group/file">
                                                         <input
                                                             type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange}
                                                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                                                         />
-                                                        <div className="w-full rounded-lg border-2 border-dashed border-navy/10 group-hover/file:border-gold/50 group-hover/file:bg-gold/5 bg-surface/30 p-3 flex flex-row items-center justify-center gap-3 transition-all duration-500">
-                                                            <Upload className={fileName ? "text-gold" : "text-navy/20"} size={20} />
-                                                            <span className={`text-xs md:text-sm tracking-wide ${fileName ? "text-navy font-bold" : "text-navy/40 font-bold"}`}>
-                                                                {fileName || "Click to browse or drag & drop your file"}
-                                                            </span>
+                                                        <div className="w-full rounded-2xl border-2 border-dashed border-navy/10 group-hover/file:border-gold/50 group-hover/file:bg-gold/5 bg-surface/30 p-5 flex flex-row items-center justify-center gap-4 transition-all duration-500 shadow-inner">
+                                                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${fileName ? "bg-gold text-white" : "bg-navy/5 text-navy/20"}`}>
+                                                                <Upload size={24} />
+                                                            </div>
+                                                            <div className="flex flex-col">
+                                                                <span className={`text-base tracking-wide font-display ${fileName ? "text-navy font-bold" : "text-navy/40 font-bold"}`}>
+                                                                    {fileName || "Click to browse or drag & drop"}
+                                                                </span>
+                                                                {!fileName && <span className="text-[10px] text-navy/30 uppercase font-black tracking-widest mt-0.5 font-sans">PDF, DOCX up to 10MB</span>}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="space-y-1">
-                                                    <label className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-navy/40 ml-1 uppercase">Message</label>
-                                                    <textarea
-                                                        name="message" rows={2} placeholder="Briefly describe your objectives..." value={form.message} onChange={handleChange}
-                                                        className="w-full bg-surface/50 border border-navy/10 rounded-lg py-2.5 px-3 text-sm md:text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/5 transition-all resize-none"
-                                                    />
+                                                <div className="space-y-2">
+                                                    <label className="text-xs md:text-sm font-black tracking-[0.1em] text-navy/60 ml-2 uppercase font-display">Message</label>
+                                                    <div className="relative group">
+                                                        <textarea
+                                                            name="message" rows={3} placeholder="Briefly describe your objectives or specific search requirements..." value={form.message} onChange={handleChange}
+                                                            className="w-full bg-surface border-2 border-transparent rounded-2xl py-4 px-5 text-base text-navy placeholder:text-navy/20 focus:outline-none focus:border-gold/30 focus:bg-white focus:shadow-[0_10px_30px_-10px_rgba(212,175,55,0.1)] transition-all shadow-inner resize-none font-display"
+                                                        />
+                                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold/10 to-teal/10 opacity-0 group-focus-within:opacity-100 -z-10 blur-sm transition-opacity" />
+                                                    </div>
                                                 </div>
 
                                                 <motion.button
-                                                    whileHover={{ y: -2 }}
+                                                    whileHover={{ y: -4, boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.3)" }}
                                                     whileTap={{ scale: 0.98 }}
                                                     type="submit"
-                                                    className="w-full group relative h-11 md:h-12 rounded-lg gradient-gold text-white font-bold tracking-[0.3em] text-xs md:text-sm shadow-lg overflow-hidden transition-all"
+                                                    className="w-full group relative h-16 rounded-2xl gradient-gold text-white font-bold tracking-[0.4em] text-sm md:text-base shadow-[0_15px_30px_-10px_rgba(0,0,0,0.2)] overflow-hidden transition-all"
                                                 >
-                                                    <div className="relative z-10 flex items-center justify-center gap-2">
-                                                        Send Message <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                                                    <div className="relative z-10 flex items-center justify-center gap-3">
+                                                        SEND MESSAGE <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                                                     </div>
-                                                    <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                                                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
                                                 </motion.button>
                                             </form>
                                         </div>

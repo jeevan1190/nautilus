@@ -126,8 +126,8 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Reach Out - Adjust sizing for contact page redundancy */}
-          <motion.div variants={fadeInUp} className={`space-y-3 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
+          {/* Reach Out */}
+          <motion.div variants={fadeInUp} className="space-y-3">
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Global Reach</h4>
             <div className="space-y-2.5">
               <div className="flex gap-4 items-start group">
