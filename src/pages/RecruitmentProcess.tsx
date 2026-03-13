@@ -12,12 +12,6 @@ const RecruitmentProcess = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const pillars = [
-        { icon: Shield, title: "Uncompromising Quality", desc: "Every step is governed by rigorous quality benchmarks and multi-stage verification." },
-        { icon: Zap, title: "Unmatched Speed", desc: "Our lean, agile methodology reduces time-to-hire without sacrificing candidate precision." },
-        { icon: Target, title: "Strategic Alignment", desc: "We don't just fill roles; we align human capital with your long-term organizational goals." },
-    ];
-
     return (
         <div className="min-h-screen flex flex-col bg-background overflow-hidden font-display">
             <Navbar />
@@ -30,11 +24,11 @@ const RecruitmentProcess = () => {
                         className="absolute inset-0 z-0"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070"
+                            src="/assets/images/team_meeting.png"
                             alt="Professional Team Meeting"
                             className="w-full h-full object-cover"
-                            fetchPriority="high"
-                            loading="eager"
+                            fetchPriority="low"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/60 to-navy" />
                     </motion.div>
@@ -69,30 +63,6 @@ const RecruitmentProcess = () => {
                     <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10" />
                 </header>
 
-                {/* Introductory Philosophy Section */}
-                <section className="py-24 bg-background relative z-10">
-                    <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
-                        <div className="grid lg:grid-cols-3 gap-12 xl:gap-16">
-                            {pillars.map((p, i) => (
-                                <motion.div
-                                    key={p.title}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1, duration: 0.6 }}
-                                    className="group text-center lg:text-left"
-                                >
-                                    <div className="w-16 h-16 rounded-2xl bg-navy/5 flex items-center justify-center mb-8 mx-auto lg:mx-0 group-hover:bg-gold transition-colors duration-500">
-                                        <p.icon size={28} className="text-navy group-hover:text-navy transition-colors" />
-                                    </div>
-                                    <h4 className="text-xl xl:text-2xl font-display font-bold text-foreground mb-4">{p.title}</h4>
-                                    <p className="text-foreground text-sm xl:text-base leading-relaxed">{p.desc}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
                 {/* Professional Imagery Section */}
                 <section className="py-16 bg-background relative z-10 w-full px-6 md:px-10 lg:px-20 xl:px-24">
                     <div className="grid md:grid-cols-2 gap-8 items-center justify-center">
@@ -104,8 +74,9 @@ const RecruitmentProcess = () => {
                             className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200"
-                                alt="Professional Contract Review"
+                                src="/assets/images/consultation.jpg"
+                                alt="HR and Employee Meeting"
+                                loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -118,8 +89,9 @@ const RecruitmentProcess = () => {
                             className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
-                                alt="Executive Contract Signing"
+                                src="/assets/images/presentation.jpg"
+                                alt="Presenting a Project"
+                                loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -127,10 +99,9 @@ const RecruitmentProcess = () => {
                     </div>
                 </section>
 
-                <RecruitmentProcessCards />
-
                 <div className="bg-background">
                     <WhyUsSection />
+                    <RecruitmentProcessCards />
                 </div>
             </main>
             <Footer />

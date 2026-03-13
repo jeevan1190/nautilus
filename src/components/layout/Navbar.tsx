@@ -49,6 +49,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Nautilus International"
+              loading="lazy"
               // increased base height and added larger breakpoints for better responsiveness
               className="h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 w-auto object-contain"
               onError={(e) => {

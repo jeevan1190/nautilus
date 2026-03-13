@@ -21,11 +21,11 @@ const About = () => {
                         className="absolute inset-0 z-0"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069"
+                            src="/assets/images/office_landscape.png"
                             alt="Office Background"
                             className="w-full h-full object-cover brightness-[0.4]"
-                            fetchPriority="high"
-                            loading="eager"
+                            fetchPriority="low"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/60 to-navy" />
                     </motion.div>

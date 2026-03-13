@@ -77,7 +77,10 @@ const processSteps = [
             <div className="px-8 pb-8 pl-10 border-t border-navy/5">
               <div className="flex gap-6 pt-6">
                 <div className="w-12 shrink-0" />{/* spacer to align with title */}
-                <p className="text-navy/75 text-sm sm:text-base leading-relaxed font-semibold">
+                <p 
+                  className="text-navy/75 text-sm sm:text-base leading-relaxed font-semibold"
+                  style={{ fontFamily: '"Times New Roman", Times, serif' }}
+                >
                   {step.desc}
                 </p>
               </div>
@@ -95,7 +98,10 @@ const processSteps = [
             <div className="px-8 pb-6 pl-10">
               <div className="flex gap-6">
                 <div className="w-12 shrink-0" />
-                <p className="text-navy/50 text-sm leading-relaxed font-medium line-clamp-2">
+                <p 
+                  className="text-navy/50 text-sm leading-relaxed font-medium line-clamp-2"
+                  style={{ fontFamily: '"Times New Roman", Times, serif' }}
+                >
                   {step.desc}
                 </p>
               </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion, Variants } from "framer-motion";
 
 const HeroSection = () => {
-  const heroImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070";
+  const heroImage = "/assets/images/office_landscape.png";
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -56,8 +56,8 @@ const HeroSection = () => {
           src={heroImage}
           alt="Professional Corporate Background"
           className="w-full h-full object-cover"
-          fetchPriority="high"
-          loading="eager"
+          fetchPriority="low"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-navy/80" />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-transparent to-navy" />

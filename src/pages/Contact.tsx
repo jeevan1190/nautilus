@@ -71,11 +71,11 @@ const Contact = () => {
                         className="absolute inset-0 z-0"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2070"
+                            src="/assets/images/office_landscape.png"
                             alt="Executive Office"
                             className="w-full h-full object-cover"
-                            fetchPriority="high"
-                            loading="eager"
+                            fetchPriority="low"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/70 to-navy" />
                     </motion.div>

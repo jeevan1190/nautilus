@@ -49,6 +49,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Nautilus International"
+                loading="lazy"
                 className="h-14 md:h-18 lg:h-20 w-auto object-contain"
               />
             </Link>

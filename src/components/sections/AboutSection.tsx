@@ -3,8 +3,8 @@ import { Users, Globe, Heart, Lightbulb, Shield, Star, Target, Award, CheckCircl
 import { useState, useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 
-const aboutMeeting = "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2070";
-const visionSummit = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2074";
+const aboutMeeting = "/assets/images/team_meeting.png";
+const visionSummit = "/assets/images/office_landscape.png";
 
 const values = [
   { icon: Users, title: "Collaboration", desc: "We believe in the power of teamwork uniting diverse perspectives to foster innovation and achieve shared goals." },
@@ -162,14 +162,14 @@ const AboutSection = () => {
                   the future. Our mission is to connect you with the exceptional talent that can make that vision a reality.
                 </p>
                 <p>
-                  We harness advanced recruitment technology to enhance your hiring process, expand your outreach, and 
-                  create a more inclusive talent pool. By merging intelligent technology with human expertise, we ensure 
-                  that each hire is not only a perfect match for your organization but also a driving force for growth, 
+                  We harness advanced recruitment technology to enhance your hiring process, expand your outreach, and
+                  create a more inclusive talent pool. By merging intelligent technology with human expertise, we ensure
+                  that each hire is not only a perfect match for your organization but also a driving force for growth,
                   creativity, and sustainable success.
                 </p>
                 <p>
-                  Partnering with Nautilus International means transcending the conventional approach to recruitment. 
-                  You are not just filling vacancies; you are assembling dynamic teams that transform potential into 
+                  Partnering with Nautilus International means transcending the conventional approach to recruitment.
+                  You are not just filling vacancies; you are assembling dynamic teams that transform potential into
                   achievement. Let us help you forge the future you envision through the right talent.
                 </p>
               </motion.div>
@@ -200,8 +200,9 @@ const AboutSection = () => {
               className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
             >
               <img
-                src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=1200"
+                src="/assets/images/female_professional.png"
                 alt="Professional Business Woman Working on Laptop at Desk"
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -214,8 +215,9 @@ const AboutSection = () => {
               className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
             >
               <img
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200"
+                src="/assets/images/collaboration.png"
                 alt="Team Discussing Strategies at Table"
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -321,7 +323,7 @@ const AboutSection = () => {
           <div className="w-full px-6 md:px-10 lg:px-20 xl:px-24">
             <div className="max-w-6xl mx-auto">
               <SectionTitle label="The People" title="Our Team And Our Edge" />
-              
+
               <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -329,24 +331,24 @@ const AboutSection = () => {
                 variants={staggerContainer}
                 className="space-y-12"
               >
-                <motion.div 
-                  variants={fadeInUp} 
+                <motion.div
+                  variants={fadeInUp}
                   className="bg-navy p-10 md:p-16 lg:p-20 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border border-white/10"
                 >
                   {/* Decorative background effects */}
                   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] -mr-64 -mt-64 group-hover:bg-gold/10 transition-colors duration-1000 pointer-events-none" />
                   <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal/5 rounded-full blur-[120px] -ml-64 -mb-64 group-hover:bg-teal/10 transition-colors duration-1000 pointer-events-none" />
-                  
+
                   <div className="relative z-10 max-w-4xl mx-auto">
                     <div className="space-y-8 text-primary-foreground/90 text-lg md:text-xl leading-relaxed font-medium text-center">
                       <p className="drop-shadow-sm">
                         <span className="text-gold font-bold text-2xl md:text-3xl block mb-6">Our Team:</span>
-                        Our Management and Execution Team brings together over 20 years of collective professional experience, 
-                        ensuring consistent value across every client engagement and business process. We are a team of seasoned 
+                        Our Management and Execution Team brings together over 20 years of collective professional experience,
+                        ensuring consistent value across every client engagement and business process. We are a team of seasoned
                         consultants with expertise spanning multiple sectors.
                       </p>
                       <p className="drop-shadow-sm">
-                        Supporting our core team is a non-executive advisory panel of senior industry experts. Their insights and 
+                        Supporting our core team is a non-executive advisory panel of senior industry experts. Their insights and
                         networks extend our global reach and strengthen our ability to deliver solutions across diverse markets.
                       </p>
                     </div>
@@ -356,7 +358,7 @@ const AboutSection = () => {
                 <motion.div variants={fadeInUp} className="pt-16 border-t border-border/50 max-w-4xl mx-auto">
                   <h3 className="text-2xl md:text-3xl font-display font-bold text-navy mb-6">Our Edge</h3>
                   <p className="text-foreground text-lg mb-8 font-semibold">We believe our advantage lies in three pillars:</p>
-                  
+
                   <ul className="space-y-4">
                     {[
                       { title: "Quality of People", desc: "Experienced professionals committed to excellence" },
@@ -373,7 +375,7 @@ const AboutSection = () => {
                   </ul>
 
                   <p className="mt-10 text-foreground text-base md:text-lg leading-relaxed font-bold italic border-l-4 border-gold pl-6">
-                    Our consultants deliver recruitment expertise on the ground, with a deep understanding of multicultural 
+                    Our consultants deliver recruitment expertise on the ground, with a deep understanding of multicultural
                     environments and local market dynamics.
                   </p>
                 </motion.div>

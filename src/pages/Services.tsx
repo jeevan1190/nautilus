@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, TrendingUp, ShieldCheck, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroProfessional from "@/assets/hero-professional.png";
+import aboutMeeting from "@/assets/about-meeting.png";
 
 const Services = () => {
     useEffect(() => {
@@ -33,11 +35,11 @@ const Services = () => {
                         className="absolute inset-0 z-0"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2070"
+                            src="/assets/images/office_landscape.png"
                             alt="Corporate Services"
                             className="w-full h-full object-cover"
-                            fetchPriority="high"
-                            loading="eager"
+                            fetchPriority="low"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/70 to-navy" />
                     </motion.div>
@@ -84,8 +86,9 @@ const Services = () => {
                             className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200"
+                                src={heroProfessional}
                                 alt="Corporate Recruitment Meeting"
+                                loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -98,8 +101,9 @@ const Services = () => {
                             className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200"
+                                src={aboutMeeting}
                                 alt="Executive Recruitment Meeting"
+                                loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -112,8 +116,9 @@ const Services = () => {
                             className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200"
+                                src="/assets/images/male_executive.png"
                                 alt="Executive Search Team"
+                                loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -163,8 +168,9 @@ const Services = () => {
                             className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1200"
+                                src="/assets/images/female_professional.png"
                                 alt="Employer and Candidate Consulting with Us"
+                                loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
@@ -177,8 +183,9 @@ const Services = () => {
                             className="w-full h-[250px] sm:h-[300px] lg:h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_24,_43,_0.1)] relative group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200"
+                                src="/assets/images/interview.png"
                                 alt="Formal Interview Process"
+                                loading="lazy"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors duration-500" />
