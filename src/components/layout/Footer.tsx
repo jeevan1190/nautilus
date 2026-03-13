@@ -169,9 +169,9 @@ const Footer = () => {
             © {new Date().getFullYear()} Nautilus International. Architecture of Success.
           </p>
           <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
-            <a href="#" className="bg-primary text-white px-3 py-1 rounded-md text-[10px] md:text-xs uppercase tracking-[0.3em] font-normal transition-opacity hover:opacity-90">Privacy</a>
-            <a href="#" className="bg-primary text-white px-3 py-1 rounded-md text-[10px] md:text-xs uppercase tracking-[0.3em] font-normal transition-opacity hover:opacity-90">Terms</a>
-            <a href="#" className="bg-primary text-white px-3 py-1 rounded-md text-[10px] md:text-xs uppercase tracking-[0.3em] font-normal transition-opacity hover:opacity-90">Cookies</a>
+            <a href="#" className="text-primary px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-colors hover:text-gold">Privacy</a>
+            <a href="#" className="text-primary px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-colors hover:text-gold">Terms</a>
+            <a href="#" className="text-primary px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-colors hover:text-gold">Cookies</a>
           </div>
         </motion.div>
       </div>
