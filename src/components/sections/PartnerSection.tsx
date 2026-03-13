@@ -6,37 +6,49 @@ const partnerFeatures = [
         title: "Expert Talent Acquisition",
         desc: "Our specialized team combines industry knowledge with advanced recruitment technology to attract and identify top-tier talent that aligns with your organization’s values and objectives.",
         icon: Award,
-        color: "gold"
+        colorClass: "text-amber-500",
+        bgColor: "bg-amber-50",
+        accentColor: "bg-amber-500"
     },
     {
         title: "Customized Solutions",
         desc: "We understand that every organization is unique. We tailor our recruitment strategies to meet your specific needs, ensuring that we find the right individuals who can contribute to your vision.",
         icon: Settings2,
-        color: "teal"
+        colorClass: "text-slate-500",
+        bgColor: "bg-slate-50",
+        accentColor: "bg-slate-500"
     },
     {
         title: "Enhanced Diversity",
         desc: "Our commitment to inclusivity means you will benefit from a diverse talent pool, offering a range of perspectives, ideas, and experiences that can drive innovation and creativity within your organization.",
         icon: Users,
-        color: "navy"
+        colorClass: "text-emerald-500",
+        bgColor: "bg-emerald-50",
+        accentColor: "bg-emerald-500"
     },
     {
         title: "Streamlined Hiring Process",
         desc: "By merging technology with human expertise, we optimize and simplify your hiring process, saving you time and resources while increasing the quality of candidates presented.",
         icon: Zap,
-        color: "teal"
+        colorClass: "text-cyan-500",
+        bgColor: "bg-cyan-50",
+        accentColor: "bg-cyan-500"
     },
     {
         title: "Long-Term Relationships",
         desc: "We believe in building lasting partnerships with our clients, providing ongoing support and guidance as your organization evolves and your talent needs change.",
         icon: Handshake,
-        color: "gold"
+        colorClass: "text-orange-500",
+        bgColor: "bg-orange-50",
+        accentColor: "bg-orange-500"
     },
     {
         title: "Future-Focused Growth",
         desc: "Together, we will assemble dynamic teams that not only meet today’s challenges but are also equipped to tackle future opportunities, positioning your organization as a leader in your industry.",
         icon: TrendingUp,
-        color: "navy"
+        colorClass: "text-indigo-500",
+        bgColor: "bg-indigo-50",
+        accentColor: "bg-indigo-500"
     }
 ];
 
@@ -100,14 +112,10 @@ const PartnerSection = () => {
                             {/* Premium Card Design */}
                             <div className="relative z-10 p-8 sm:p-10 bg-white border border-navy/5 rounded-[2.5rem] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full flex flex-col overflow-hidden">
                                 {/* Visual Accent */}
-                                <div className={`absolute top-0 right-0 w-32 h-32 opacity-10 rounded-full blur-3xl -mr-16 -mt-16 transition-colors duration-500 ${item.color === 'gold' ? 'bg-gold' : item.color === 'teal' ? 'bg-teal' : 'bg-navy'
-                                    }`} />
-
+                                <div className={`absolute top-0 right-0 w-32 h-32 opacity-10 rounded-full blur-3xl -mr-16 -mt-16 transition-colors duration-500 ${item.accentColor}`} />
+                                
                                 {/* Icon Container */}
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 shadow-sm ${item.color === 'gold' ? 'bg-gold/10 text-gold group-hover:bg-gold group-hover:text-navy' :
-                                    item.color === 'teal' ? 'bg-teal/10 text-teal group-hover:bg-teal group-hover:text-white' :
-                                        'bg-navy/10 text-navy group-hover:bg-navy group-hover:text-white'
-                                    }`}>
+                                <div className={`w-16 h-16 rounded-2xl ${item.bgColor} ${item.colorClass} flex items-center justify-center mb-8 transition-all duration-500 shadow-sm border border-navy/5 group-hover:bg-navy group-hover:text-white`}>
                                     <item.icon size={30} />
                                 </div>
 
@@ -123,10 +131,9 @@ const PartnerSection = () => {
                                 {/* Decorative Footer Detail */}
                                 <div className="mt-8 pt-6 border-t border-navy/5 flex items-center justify-between">
                                     <div className="w-10 h-1 rounded-full bg-navy/5 overflow-hidden">
-                                        <div className={`h-full w-0 group-hover:w-full transition-all duration-700 ${item.color === 'gold' ? 'bg-gold' : item.color === 'teal' ? 'bg-teal' : 'bg-navy'
-                                            }`} />
+                                        <div className={`h-full w-0 group-hover:w-full transition-all duration-700 ${item.accentColor}`} />
                                     </div>
-                                    <CheckCircle2 size={18} className="text-gold/20 group-hover:text-gold transition-colors" />
+                                    <CheckCircle2 size={18} className="text-emerald-500/30 group-hover:text-emerald-500 transition-colors" />
                                 </div>
                             </div>
                         </motion.div>

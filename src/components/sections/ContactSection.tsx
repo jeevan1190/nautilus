@@ -64,13 +64,13 @@ const ContactSection = () => {
 
               <div className="space-y-8 mt-4">
                 {[
-                  { icon: MapPin, title: "Our Headquarters", content: "Office No 214, Vishnu Capital, City Pride School Lane, Chikhali - Moshi, Pune, Maharashtra, India – 411062" },
-                  { icon: Phone, title: "Direct Line", content: "+91 7410775779", link: "tel:+917410775779" },
-                  { icon: Mail, title: "Email Support", content: "hr@nautilusinternational.in", link: "mailto:hr@nautilusinternational.in" }
+                  { icon: MapPin, title: "Our Headquarters", content: "Office No 214, Vishnu Capital, City Pride School Lane, Chikhali - Moshi, Pune, Maharashtra, India – 411062", color: "text-rose-500", bgColor: "bg-rose-50" },
+                  { icon: Phone, title: "Direct Line", content: "+91 7410775779", link: "tel:+917410775779", color: "text-emerald-500", bgColor: "bg-emerald-50" },
+                  { icon: Mail, title: "Email Support", content: "hr@nautilusinternational.in", link: "mailto:hr@nautilusinternational.in", color: "text-indigo-500", bgColor: "bg-indigo-50" }
                 ].map((item, i) => (
                   <motion.div key={i} variants={fadeInUp} className="flex items-start gap-5 group">
-                    <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center shrink-0 border border-border group-hover:bg-teal/5 transition-colors">
-                      <item.icon className="text-teal" size={24} />
+                    <div className={`w-12 h-12 rounded-xl ${item.bgColor} flex items-center justify-center shrink-0 border border-border group-hover:bg-navy transition-colors`}>
+                      <item.icon className={`${item.color} group-hover:text-white transition-colors`} size={24} />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg text-foreground mb-1">{item.title}</h4>
@@ -139,14 +139,14 @@ const ContactSection = () => {
                       onChange={handleFileChange}
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                     />
-                    <div className="w-full rounded-xl border border-dashed border-border group-hover:border-teal/50 bg-surface px-5 py-4 flex items-center justify-between transition-all">
+                    <div className="w-full rounded-xl border border-dashed border-border group-hover:border-emerald-500/50 bg-surface px-5 py-4 flex items-center justify-between transition-all">
                       <div className="flex items-center gap-3">
-                        <Upload className={fileName ? "text-teal" : "text-muted-foreground"} size={20} />
+                        <Upload className={fileName ? "text-emerald-500" : "text-muted-foreground"} size={20} />
                         <span className={`text-sm ${fileName ? "text-foreground font-medium" : "text-muted-foreground/50"}`}>
                           {fileName || "Click to upload your CV"}
                         </span>
                       </div>
-                      {fileName && <CheckCircle2 className="text-teal" size={18} />}
+                      {fileName && <CheckCircle2 className="text-emerald-500" size={18} />}
                     </div>
                   </div>
                 </div>

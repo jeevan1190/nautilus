@@ -6,55 +6,73 @@ const differentiators = [
         title: "80% Joining Ratio",
         icon: TrendingUp,
         desc: "Our commitment to quality candidates is reflected in our impressive joining ratio of over 80%. We ensure candidates are truly ready.",
-        size: "large"
+        size: "large",
+        color: "text-emerald-500",
+        bgColor: "bg-emerald-50"
     },
     {
         title: "Robust Vetting",
         icon: ShieldCheck,
         desc: "Thorough vetting processes that significantly reduce last-minute dropouts, ensuring reliability and commitment.",
-        size: "small"
+        size: "small",
+        color: "text-blue-600",
+        bgColor: "bg-blue-50"
     },
     {
         title: "Personalized Service",
         icon: Heart,
         desc: "Dedicated support from experts who understand both technical requirements and cultural alignment.",
-        size: "small"
+        size: "small",
+        color: "text-rose-500",
+        bgColor: "bg-rose-50"
     },
     {
         title: "Continuous Engagement",
         icon: MessageCircle,
         desc: "Post-offer engagement that keeps candidates valued and informed, securing their successful onboarding.",
-        size: "small"
+        size: "small",
+        color: "text-sky-500",
+        bgColor: "bg-sky-50"
     },
     {
         title: "Streamlined Process",
         icon: Zap,
         desc: "End-to-end solutions that take the hassle out of hiring, from initial sourcing to final placement.",
-        size: "large"
+        size: "large",
+        color: "text-amber-500",
+        bgColor: "bg-amber-50"
     },
     {
         title: "Industry Expertise",
         icon: Briefcase,
         desc: "Specialists with deep knowledge across diverse sectors, providing unique insights and tailored approaches.",
-        size: "small"
+        size: "small",
+        color: "text-indigo-500",
+        bgColor: "bg-indigo-50"
     },
     {
         title: "Trustworthy Partnership",
         icon: Handshake,
         desc: "Consistent delivery of quality results, prioritizing long-term value and transparency in every operation.",
-        size: "small"
+        size: "small",
+        color: "text-orange-500",
+        bgColor: "bg-orange-50"
     },
     {
         title: "Long-Term Focus",
         icon: InfinityIcon,
         desc: "Invested in the sustainable success of both clients and candidates, building teams that contribute meaningfully.",
-        size: "small"
+        size: "small",
+        color: "text-violet-500",
+        bgColor: "bg-violet-50"
     },
     {
         title: "Tailored Strategies",
         icon: Settings2,
         desc: "Customized recruitment strategies that align perfectly with your specific organizational goals and needs.",
-        size: "small"
+        size: "small",
+        color: "text-slate-500",
+        bgColor: "bg-slate-50"
     }
 ];
 
@@ -116,11 +134,11 @@ const DifferentiatorsSection = () => {
                                 className="group relative bg-white border border-navy/5 rounded-[2rem] p-8 shadow-[0_15px_45px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_45px_80px_-20px_rgba(15,23,42,0.1)] transition-all duration-700 flex flex-col"
                             >
                                 <div className="flex items-center justify-between mb-8">
-                                    <div className="w-16 h-16 rounded-2xl bg-surface flex items-center justify-center text-navy group-hover:bg-navy group-hover:text-gold transition-all duration-500 shadow-sm">
+                                    <div className={`w-16 h-16 rounded-2xl ${item.bgColor} flex items-center justify-center ${item.color} group-hover:bg-navy group-hover:text-white transition-all duration-500 shadow-sm border border-navy/5`}>
                                         <Icon size={28} />
                                     </div>
                                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                                        <CheckCircle2 size={24} className="text-gold" />
+                                        <CheckCircle2 size={24} className="text-emerald-500" />
                                     </div>
                                 </div>
 

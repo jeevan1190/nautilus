@@ -50,10 +50,10 @@ const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => 
 };
 
 const partnerReasons = [
-  { icon: Target, title: "Expert Strategy", desc: "Deep industry intelligence to find not just candidates, but future leaders." },
-  { icon: Layers, title: "Bespoke Solutions", desc: "Recruitment frameworks custom-built for your specific organizational goals." },
-  { icon: Users, title: "Diversity First", desc: "Inclusive practices that enrich your culture and drive innovation." },
-  { icon: Zap, title: "Agile Execution", desc: "Streamlined processes that minimize time-to-hire without compromising quality." },
+  { icon: Target, title: "Expert Strategy", desc: "Deep industry intelligence to find not just candidates, but future leaders.", color: "text-rose-500", bgColor: "bg-rose-50" },
+  { icon: Layers, title: "Bespoke Solutions", desc: "Recruitment frameworks custom-built for your specific organizational goals.", color: "text-indigo-500", bgColor: "bg-indigo-50" },
+  { icon: Users, title: "Diversity First", desc: "Inclusive practices that enrich your culture and drive innovation.", color: "text-emerald-500", bgColor: "bg-emerald-50" },
+  { icon: Zap, title: "Agile Execution", desc: "Streamlined processes that minimize time-to-hire without compromising quality.", color: "text-amber-500", bgColor: "bg-amber-50" },
 ];
 
 const differentiators = [
@@ -109,8 +109,8 @@ const WhyUsSection = () => (
                 variants={fadeInUp}
                 className="flex gap-6 md:gap-8 group"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-card border border-navy/10 shadow-sm flex items-center justify-center shrink-0 group-hover:bg-navy group-hover:text-gold transition-all duration-500 group-hover:scale-110 shadow-navy/5">
-                  <r.icon size={28} />
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl ${r.bgColor} border border-navy/5 shadow-sm flex items-center justify-center shrink-0 group-hover:bg-navy transition-all duration-500 group-hover:scale-110 shadow-navy/5`}>
+                  <r.icon size={28} className={`${r.color} group-hover:text-white transition-colors`} />
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xl md:text-2xl text-foreground mb-2 group-hover:text-navy transition-colors">{r.title}</h4>
@@ -169,8 +169,8 @@ const WhyUsSection = () => (
                   transition={{ delay: 0.5 + (i * 0.1) }}
                   className="flex items-center gap-4 text-white/80 group/item"
                 >
-                  <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center group-hover/item:bg-gold transition-colors">
-                    <CheckCircle2 size={12} className="text-gold group-hover:text-navy transition-colors" />
+                  <div className="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center group-hover/item:bg-emerald-500 transition-colors">
+                    <CheckCircle2 size={12} className="text-emerald-500 group-hover:text-white transition-colors" />
                   </div>
                   <span className="font-medium text-base md:text-lg tracking-wide">{item}</span>
                 </motion.div>

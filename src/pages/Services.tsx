@@ -15,9 +15,9 @@ const Services = () => {
     }, []);
 
     const benefits = [
-        { icon: Zap, title: "Accelerated Hiring", desc: "Reducing time-to-fill by 40% through our proprietary candidate pipeline." },
-        { icon: ShieldCheck, title: "Verified Quality", desc: "Rigorous 5-step vetting process ensuring only top 5% talent reach your desk." },
-        { icon: TrendingUp, title: "Strategic Growth", desc: "Consultative approach that aligns recruitment with your long-term roadmap." },
+        { icon: Zap, title: "Accelerated Hiring", desc: "Reducing time-to-fill by 40% through our proprietary candidate pipeline.", color: "text-amber-500", bgColor: "bg-amber-50" },
+        { icon: ShieldCheck, title: "Verified Quality", desc: "Rigorous 5-step vetting process ensuring only top 5% talent reach your desk.", color: "text-blue-600", bgColor: "bg-blue-50" },
+        { icon: TrendingUp, title: "Strategic Growth", desc: "Consultative approach that aligns recruitment with your long-term roadmap.", color: "text-emerald-500", bgColor: "bg-emerald-50" },
     ];
 
     return (
@@ -146,7 +146,7 @@ const Services = () => {
                                     className="flex flex-col h-full relative p-8 md:p-10 rounded-3xl bg-card border border-navy/5 shadow-[0_12px_35px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.12)] hover:border-gold/30 transition-all duration-500 group overflow-hidden"
                                 >
                                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
-                                    <div className="w-14 h-14 rounded-2xl bg-teal/10 flex items-center justify-center text-teal mb-8 group-hover:scale-110 shadow-[0_10px_20px_rgba(13,148,136,0.1)] transition-transform duration-500">
+                                    <div className={`w-14 h-14 rounded-2xl ${b.bgColor} flex items-center justify-center ${b.color} mb-8 group-hover:bg-navy group-hover:text-white shadow-sm transition-all duration-500 border border-navy/5`}>
                                         <b.icon size={26} />
                                     </div>
                                     <h4 className="text-xl font-bold text-foreground mb-4 font-display group-hover:text-navy transition-colors">{b.title}</h4>

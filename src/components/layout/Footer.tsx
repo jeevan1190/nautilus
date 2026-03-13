@@ -41,42 +41,55 @@ const Footer = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-10 mb-6 border-b border-white/5 pb-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-4 border-b border-white/5 pb-4"
         >
           {/* Brand Column */}
-          <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-4 text-center sm:text-left">
+          <motion.div variants={fadeInUp} className="lg:col-span-1 space-y-3 text-center sm:text-left">
             <Link to="/" className="inline-block group transition-transform hover:scale-[1.01]">
               <img
                 src={logo}
                 alt="Nautilus International"
                 loading="lazy"
-                className="h-14 md:h-18 lg:h-20 w-auto object-contain"
+                className="h-12 md:h-16 lg:h-18 w-auto object-contain"
               />
             </Link>
-            <p className="text-black text-sm md:text-base font-normal leading-relaxed max-w-sm">
+            <p className="text-black text-xs md:text-sm font-normal leading-relaxed max-w-sm">
               "A strategic architecture of recruitment, engineered to build the world's most dynamic executive teams."
             </p>
             <div className="flex gap-4 pt-2">
               {[
-                { icon: Linkedin, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Mail, href: "mailto:hr@nautilusinternational.in" }
+                {
+                  href: "#",
+                  color: "#FFFFFF",
+                  customIcon: <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" className="w-[20px] h-[20px] object-contain" />
+                },
+                {
+                  href: "#",
+                  color: "#FFFFFF",
+                  customIcon: <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram" className="w-[20px] h-[20px] object-contain" />
+                },
+                {
+                  href: "mailto:hr@nautilusinternational.in",
+                  color: "#FFFFFF",
+                  customIcon: <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" className="w-[20px] h-[20px] object-contain" />
+                }
               ].map((social, i) => (
                 <motion.a
                   whileHover={{ y: -5, backgroundColor: "hsl(var(--gold))", color: "hsl(var(--navy))" }}
                   key={i} href={social.href}
-                  className="w-11 h-11 rounded-xl bg-white/20 border border-white/10 flex items-center justify-center transition-all duration-500 shadow-lg text-black"
+                  className="w-11 h-11 rounded-xl border-2 border-white flex items-center justify-center transition-all duration-500 shadow-lg"
+                  style={{ backgroundColor: social.color }}
                 >
-                  <social.icon size={20} className="text-black" />
+                  {social.customIcon}
                 </motion.a>
               ))}
             </div>
           </motion.div>
 
           {/* Global Navigation */}
-          <motion.div variants={fadeInUp} className="space-y-4 text-center sm:text-left">
+          <motion.div variants={fadeInUp} className="space-y-3 text-center sm:text-left">
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Navigation</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1.5">
               {[
                 { label: "Home", path: "/" },
                 { label: "About", path: "/about" },
@@ -96,9 +109,9 @@ const Footer = () => {
           </motion.div>
 
           {/* Sector Expertise */}
-          <motion.div variants={fadeInUp} className="space-y-4 text-center sm:text-left">
+          <motion.div variants={fadeInUp} className="space-y-3 text-center sm:text-left">
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Expertise</h4>
-            <ul className="space-y-2.5 text-sm md:text-base font-normal text-black">
+            <ul className="space-y-2 text-sm md:text-base font-normal text-black">
               {[
                 "Strategic IT Sourcing",
                 "Advanced Engineering",
@@ -114,12 +127,12 @@ const Footer = () => {
           </motion.div>
 
           {/* Reach Out - Adjust sizing for contact page redundancy */}
-          <motion.div variants={fadeInUp} className={`space-y-4 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
+          <motion.div variants={fadeInUp} className={`space-y-3 ${isContactPage ? 'opacity-50 pointer-events-none grayscale' : ''}`}>
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Global Reach</h4>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               <div className="flex gap-4 items-start group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
-                  <MapPin size={18} className="text-foreground" />
+                <div className="w-10 h-10 rounded-xl bg-white border-2 border-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Location" className="w-[20px] h-[20px] object-contain" />
                 </div>
                 <div className="text-sm md:text-base font-normal leading-relaxed text-black">
                   <span className="block text-black mb-1">Nautilus International</span>
@@ -130,24 +143,24 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex gap-4 items-center group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Phone size={18} className="text-gold" />
+                <div className="w-10 h-10 rounded-xl bg-white border-2 border-white flex items-center justify-center shrink-0 shadow-sm">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Phone" className="w-[22px] h-[22px] object-contain" />
                 </div>
                 <a href="tel:+917410775779" className="text-sm md:text-base font-normal text-black hover:text-gold transition-colors">
                   +91 7410775779
                 </a>
               </div>
               <div className="flex gap-4 items-center group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Mail size={18} className="text-gold" />
+                <div className="w-10 h-10 rounded-xl bg-white border-2 border-white flex items-center justify-center shrink-0 shadow-sm">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Mail" className="w-[20px] h-[20px] object-contain" />
                 </div>
                 <a href="mailto:hr@nautilusinternational.in" className="text-sm md:text-base font-normal text-black hover:text-gold transition-colors break-all">
                   hr@nautilusinternational.in
                 </a>
               </div>
               <div className="flex gap-4 items-center group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Globe size={18} className="text-gold" />
+                <div className="w-10 h-10 rounded-xl bg-white border-2 border-white flex items-center justify-center shrink-0 shadow-sm">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Website" className="w-[20px] h-[20px] object-contain" />
                 </div>
                 <a href="https://www.nautilusinternational.in" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-normal text-black hover:text-gold transition-colors break-all">
                   www.nautilusinternational.in
@@ -163,15 +176,27 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-white/5"
+          className="relative flex flex-col items-center gap-4 pt-4 pb-2 border-t border-white/5"
         >
-          <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-normal text-white bg-primary px-4 py-2 rounded-md text-center md:text-left">
-            © {new Date().getFullYear()} Nautilus International. Architecture of Success.
-          </p>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
+          <div className="static md:absolute md:top-4 md:right-0 flex flex-wrap justify-center md:justify-end gap-3 md:gap-4 w-full md:w-auto">
             <a href="#" className="text-primary px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-colors hover:text-gold">Privacy</a>
             <a href="#" className="text-primary px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-colors hover:text-gold">Terms</a>
             <a href="#" className="text-primary px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-colors hover:text-gold">Cookies</a>
+          </div>
+
+          <div className="text-center space-y-2">
+            <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-normal text-black">
+              © {new Date().getFullYear()} NAUTILUS INTERNATIONAL. ARCHITECTURE OF SUCCESS.
+            </p>
+            <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-normal text-black">
+              ALL RIGHTS RESERVED.
+            </p>
+            <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-bold text-primary pt-2">
+              DEVELOPED BY
+            </p>
+            <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-bold text-orange-500">
+              INFOYASHONAND TECHNOLOGY PVT.LTD
+            </p>
           </div>
         </motion.div>
       </div>

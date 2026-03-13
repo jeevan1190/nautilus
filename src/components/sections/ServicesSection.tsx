@@ -9,7 +9,7 @@ const services = [
       "Psychometric Evaluation",
       "Transition & Success Coaching"
     ],
-    color: "gold"
+    color: "rose"
   },
   {
     icon: Search,
@@ -33,7 +33,7 @@ const services = [
       "Policy Formulation",
       "Compensation and Rewards Management"
     ],
-    color: "navy"
+    color: "indigo"
   },
   {
     icon: Globe,
@@ -45,7 +45,7 @@ const services = [
       "Global Compliance Audits",
       "Expat Tax & Policy Advisory"
     ],
-    color: "teal"
+    color: "cyan"
   },
   {
     icon: Users,
@@ -56,7 +56,7 @@ const services = [
       "Strategic Partnership",
       "Trusted Process"
     ],
-    color: "gold"
+    color: "amber"
   },
   {
     icon: Zap,
@@ -68,7 +68,7 @@ const services = [
       "Remote-First Culture Design",
       "Digital Tooling Strategy"
     ],
-    color: "navy"
+    color: "violet"
   }
 ];
 
@@ -100,20 +100,16 @@ const staggerContainer: Variants = {
 const ServiceCard = ({ s, index }: { s: any, index: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const colorClasses = {
-    icon: s.color === 'teal'
-      ? 'bg-teal/10 text-teal group-hover:bg-teal group-hover:text-white'
-      : s.color === 'gold'
-        ? 'bg-gold/10 text-gold group-hover:bg-gold group-hover:text-navy'
-        : 'bg-navy/10 text-navy group-hover:bg-navy group-hover:text-white',
-    bar: s.color === 'teal' ? 'bg-teal' : s.color === 'gold' ? 'bg-gold' : 'bg-navy',
-    check: s.color === 'teal' ? 'text-teal' : s.color === 'gold' ? 'text-gold' : 'text-navy',
-    glow: s.color === 'teal'
-      ? 'bg-[radial-gradient(circle_at_top_right,rgba(13,148,136,0.06),transparent_70%)]'
-      : s.color === 'gold'
-        ? 'bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.06),transparent_70%)]'
-        : 'bg-[radial-gradient(circle_at_top_right,rgba(30,41,59,0.06),transparent_70%)]',
+  const colorMap: Record<string, any> = {
+    rose: { icon: 'bg-rose-50 text-rose-500 group-hover:bg-rose-500 group-hover:text-white', bar: 'bg-rose-500', glow: 'bg-rose-500/5', btn: '#f43f5e' },
+    teal: { icon: 'bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white', bar: 'bg-teal-600', glow: 'bg-teal-600/5', btn: '#0d9488' },
+    indigo: { icon: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white', bar: 'bg-indigo-600', glow: 'bg-indigo-600/5', btn: '#4f46e5' },
+    cyan: { icon: 'bg-cyan-50 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white', bar: 'bg-cyan-600', glow: 'bg-cyan-600/5', btn: '#0891b2' },
+    amber: { icon: 'bg-amber-50 text-amber-500 group-hover:bg-amber-500 group-hover:text-white', bar: 'bg-amber-500', glow: 'bg-amber-500/5', btn: '#d97706' },
+    violet: { icon: 'bg-violet-50 text-violet-600 group-hover:bg-violet-600 group-hover:text-white', bar: 'bg-violet-600', glow: 'bg-violet-600/5', btn: '#7c3aed' },
   };
+
+  const currentStyles = colorMap[s.color] || colorMap.indigo;
 
   return (
     <motion.div variants={fadeInUp} className="group">
@@ -123,16 +119,16 @@ const ServiceCard = ({ s, index }: { s: any, index: number }) => {
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {/* Colored accent bar on left */}
-        <div className={`absolute left-0 top-0 bottom-0 w-1.5 transition-all duration-500 ${isExpanded ? colorClasses.bar : 'bg-navy/10 group-hover:bg-navy/30'
+        <div className={`absolute left-0 top-0 bottom-0 w-1.5 transition-all duration-500 ${isExpanded ? currentStyles.bar : 'bg-navy/10 group-hover:bg-navy/30'
           }`} />
 
         {/* Hover glow effect */}
-        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none ${colorClasses.glow}`} />
+        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none ${currentStyles.glow}`} />
 
         {/* Card Header — always visible */}
         <div className="relative z-10 flex items-center gap-5 px-8 py-6 pl-10">
           {/* Icon */}
-          <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500 shadow-sm ${colorClasses.icon}`}>
+          <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500 shadow-sm ${currentStyles.icon}`}>
             <s.icon size={24} />
           </div>
 
@@ -144,7 +140,7 @@ const ServiceCard = ({ s, index }: { s: any, index: number }) => {
           </div>
 
           {/* Toggle Button */}
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-500 ${isExpanded ? `${colorClasses.bar} text-white` : 'bg-navy/5 text-navy group-hover:bg-navy/10'
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-500 ${isExpanded ? `${currentStyles.bar} text-white` : 'bg-navy/5 text-navy group-hover:bg-navy/10'
             }`}>
             <ArrowUpRight size={16} className={`transition-transform duration-500 ${isExpanded ? 'rotate-90' : ''}`} />
           </div>
@@ -183,7 +179,7 @@ const ServiceCard = ({ s, index }: { s: any, index: number }) => {
                       transition={{ delay: fIdx * 0.06 }}
                       className="flex items-center gap-3 text-sm text-navy/80"
                     >
-                      <CheckCircle2 size={16} className={`${colorClasses.check} shrink-0`} />
+                      <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
                       <span className="font-bold">{feature}</span>
                     </motion.li>
                   ))}
@@ -198,7 +194,7 @@ const ServiceCard = ({ s, index }: { s: any, index: number }) => {
           }`}>
           <button
             className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] transition-colors duration-300 focus:outline-none"
-            style={{ color: isExpanded ? (s.color === 'gold' ? '#D4AF37' : s.color === 'teal' ? '#0d9488' : '#1e293b') : '#64748b' }}
+            style={{ color: isExpanded ? currentStyles.btn : '#64748b' }}
             onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
           >
             {isExpanded ? 'Show less' : 'Read more'}
@@ -233,7 +229,7 @@ const ServicesSection = () => {
             {/* Decorative background effects */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] -mr-64 -mt-64 group-hover:bg-gold/10 transition-colors duration-1000 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal/5 rounded-full blur-[120px] -ml-64 -mb-64 group-hover:bg-teal/10 transition-colors duration-1000 pointer-events-none" />
-            
+
             <div className="max-w-4xl relative z-10">
               <p className="text-gold font-bold tracking-[0.4em] uppercase text-xs mb-4">Our Expertise</p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-[1.1]">
@@ -241,7 +237,7 @@ const ServicesSection = () => {
                 <span className="text-gradient-gold italic">Global Growth</span>
               </h2>
             </div>
-            
+
             {!isServicesPage && (
               <Link
                 to="/services"

@@ -7,11 +7,11 @@ const aboutMeeting = "/assets/images/team_meeting.png";
 const visionSummit = "/assets/images/office_landscape.png";
 
 const values = [
-  { icon: Users, title: "Collaboration", desc: "We believe in the power of teamwork uniting diverse perspectives to foster innovation and achieve shared goals." },
-  { icon: Shield, title: "Integrity", desc: "We operate with honesty and transparency in all interactions, ensuring trust and respect among clients and candidates alike." },
-  { icon: Lightbulb, title: "Innovation", desc: "We embrace cutting-edge technology and progressive ideas to stay ahead of the curve and offer the best solutions for our clients." },
-  { icon: Heart, title: "Inclusivity", desc: "We are committed to promoting diversity in talent acquisition, creating a more equitable and varied workforce." },
-  { icon: Star, title: "Excellence", desc: "We strive for the highest standards in our services, consistently delivering exceptional results and value to our partners." },
+  { icon: Users, title: "Collaboration", desc: "We believe in the power of teamwork uniting diverse perspectives to foster innovation and achieve shared goals.", color: "text-emerald-500", bgColor: "bg-emerald-50" },
+  { icon: Shield, title: "Integrity", desc: "We operate with honesty and transparency in all interactions, ensuring trust and respect among clients and candidates alike.", color: "text-indigo-500", bgColor: "bg-indigo-50" },
+  { icon: Lightbulb, title: "Innovation", desc: "We embrace cutting-edge technology and progressive ideas to stay ahead of the curve and offer the best solutions for our clients.", color: "text-amber-500", bgColor: "bg-amber-50" },
+  { icon: Heart, title: "Inclusivity", desc: "We are committed to promoting diversity in talent acquisition, creating a more equitable and varied workforce.", color: "text-rose-500", bgColor: "bg-rose-50" },
+  { icon: Star, title: "Excellence", desc: "We strive for the highest standards in our services, consistently delivering exceptional results and value to our partners.", color: "text-gold", bgColor: "bg-gold/5" },
 ];
 
 const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
@@ -130,7 +130,7 @@ const AboutSection = () => {
                 className="absolute -bottom-10 -left-10 bg-card p-8 rounded-2xl shadow-2xl border border-border hidden xl:block z-20"
               >
                 <div className="flex items-center gap-5">
-                  <div className="w-14 h-14 gradient-teal rounded-xl flex items-center justify-center text-accent-foreground shadow-lg">
+                  <div className="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-amber-500 shadow-lg border border-amber-100/50">
                     <Award size={28} />
                   </div>
                   <div>
@@ -250,8 +250,8 @@ const AboutSection = () => {
             className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto"
           >
             <motion.div variants={fadeInUp} className="group bg-white/5 backdrop-blur-xl border border-white/10 p-12 rounded-[2rem] hover:bg-white/10 transition-all duration-500 hover:-translate-y-2">
-              <div className="w-16 h-16 rounded-2xl bg-gold/20 flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
-                <Target className="text-gold group-hover:text-navy transition-colors" size={32} />
+              <div className="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center mb-8 border border-rose-100 group-hover:bg-rose-500 transition-colors duration-500">
+                <Target className="text-rose-500 group-hover:text-white transition-colors" size={32} />
               </div>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-primary-foreground mb-6">Our Vision</h3>
               <p className="text-primary-foreground/70 text-lg leading-relaxed font-bold italic">
@@ -260,8 +260,8 @@ const AboutSection = () => {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="group bg-white/5 backdrop-blur-xl border border-white/10 p-12 rounded-[2rem] hover:bg-white/10 transition-all duration-500 hover:-translate-y-2">
-              <div className="w-16 h-16 rounded-2xl bg-teal/20 flex items-center justify-center mb-8 group-hover:bg-teal transition-colors duration-500">
-                <Award className="text-teal group-hover:text-white transition-colors" size={32} />
+              <div className="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center mb-8 border border-amber-100 group-hover:bg-amber-500 transition-colors duration-500">
+                <Award className="text-amber-500 group-hover:text-white transition-colors" size={32} />
               </div>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-primary-foreground mb-6">Our Mission</h3>
               <p className="text-primary-foreground/70 text-lg leading-relaxed font-bold">
@@ -303,8 +303,8 @@ const AboutSection = () => {
                     <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-transparent group-hover:border-navy/20 rounded-tl-2xl transition-colors duration-500" />
                     <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-transparent group-hover:border-navy/20 rounded-br-2xl transition-colors duration-500" />
 
-                    <div className="w-16 h-16 xl:w-20 xl:h-20 mx-auto rounded-2xl gradient-teal flex items-center justify-center mb-6 xl:mb-8 group-hover:scale-110 transition-transform duration-500 shadow-xl relative z-10">
-                      <Icon className="text-accent-foreground" size={window.innerWidth > 1280 ? 36 : 28} />
+                    <div className={`w-16 h-16 xl:w-20 xl:h-20 mx-auto rounded-2xl ${v.bgColor} flex items-center justify-center mb-6 xl:mb-8 group-hover:scale-110 transition-transform duration-500 shadow-xl border border-navy/5 relative z-10 group-hover:bg-navy group-hover:text-white`}>
+                      <Icon className={`${v.color} group-hover:text-white transition-colors`} size={window.innerWidth > 1280 ? 36 : 28} />
                     </div>
                     <h4 className="font-display font-bold text-foreground text-xl xl:text-2xl mb-4 group-hover:text-navy transition-colors relative z-10">{v.title}</h4>
                     <p className="text-foreground text-sm xl:text-base leading-relaxed font-medium group-hover:text-foreground/90 transition-colors relative z-10">{v.desc}</p>
@@ -402,15 +402,15 @@ const AboutSection = () => {
               className="grid md:grid-cols-3 gap-12"
             >
               {[
-                { icon: Star, title: "Quality of People", desc: "Our recruiters aren't just HR professionals; they are industry veterans with deep domain technical expertise." },
-                { icon: Globe, title: "Global Network", desc: "Access to an international talent pool that transcends geographic boundaries and local limitations." },
-                { icon: Zap, title: "Agile Service", desc: "A bespoke, responsive recruitment lifecycle designed to scale with your organization's immediate needs." },
+                { icon: Star, title: "Quality of People", desc: "Our recruiters aren't just HR professionals; they are industry veterans with deep domain technical expertise.", color: "text-amber-500", bgColor: "bg-amber-50" },
+                { icon: Globe, title: "Global Network", desc: "Access to an international talent pool that transcends geographic boundaries and local limitations.", color: "text-sky-500", bgColor: "bg-sky-50" },
+                { icon: Zap, title: "Agile Service", desc: "A bespoke, responsive recruitment lifecycle designed to scale with your organization's immediate needs.", color: "text-orange-500", bgColor: "bg-orange-50" },
               ].map((p, i) => {
                 const Icon = p.icon;
                 return (
                   <motion.div key={p.title} variants={fadeInUp} className="text-center group">
-                    <div className="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
-                      <Icon className="text-gold group-hover:text-navy transition-colors" size={36} />
+                    <div className={`w-20 h-20 mx-auto rounded-full ${p.bgColor} border border-white/10 flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500`}>
+                      <Icon className={`${p.color} group-hover:text-navy transition-colors`} size={36} />
                     </div>
                     <h4 className="font-display font-bold text-2xl mb-4">{p.title}</h4>
                     <p className="text-primary-foreground/70 leading-relaxed font-semibold italic">{p.desc}</p>
