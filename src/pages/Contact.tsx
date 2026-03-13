@@ -194,7 +194,7 @@ const Contact = () => {
                                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal/10 rounded-full blur-[80px] -ml-32 -mb-32 pointer-events-none" />
 
                                         <div className="relative z-10">
-                                            <span className="inline-block text-[10px] font-black tracking-[0.4em] text-gold/80 uppercase mb-5 px-5 py-2 rounded-full bg-gold/10 border border-gold/30 shadow-sm backdrop-blur-md">
+                                            <span className="inline-block text-[10px] font-black tracking-[0.4em] text-white uppercase mb-5 px-5 py-2 rounded-full bg-primary border border-white/20 shadow-lg backdrop-blur-md">
                                                 Elite Presence
                                             </span>
                                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-10 leading-tight">
@@ -204,42 +204,40 @@ const Contact = () => {
                                             <div className="space-y-10">
                                                 {[
                                                     {
-                                                        icon: MapPin,
+                                                        customIcon: <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Headquarters" className="w-8 h-8 object-contain" />,
                                                         label: "Headquarters",
                                                         value: "Vishnu Capital, Office 214, Pune, India",
                                                         detail: "City Pride School Lane, Chikhali - Moshi, 411062",
-                                                        color: "text-rose-400",
-                                                        bg: "bg-gradient-to-br from-rose-500/20 to-rose-600/5",
-                                                        border: "border-rose-500/30"
+                                                        bg: "bg-white",
+                                                        border: "border-white/20"
                                                     },
                                                     {
-                                                        icon: Phone,
+                                                        customIcon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Secure Digital Line" className="w-9 h-9 object-contain" />,
                                                         label: "Secure Digital Line",
                                                         value: "+91 7410775779",
                                                         isLink: true,
                                                         href: "tel:+917410775779",
-                                                        color: "text-emerald-400",
-                                                        bg: "bg-gradient-to-br from-emerald-500/20 to-emerald-600/5",
-                                                        border: "border-emerald-500/30"
+                                                        bg: "bg-white",
+                                                        border: "border-white/20"
                                                     },
                                                     {
-                                                        icon: Mail,
+                                                        customIcon: <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Strategic Inquiry" className="w-8 h-8 object-contain" />,
                                                         label: "Strategic Inquiry",
                                                         value: "hr@nautilusinternational.in",
                                                         isLink: true,
                                                         href: "mailto:hr@nautilusinternational.in",
-                                                        color: "text-sky-400",
-                                                        bg: "bg-gradient-to-br from-sky-500/20 to-sky-600/5",
-                                                        border: "border-sky-500/30"
+                                                        bg: "bg-white",
+                                                        border: "border-white/20"
                                                     }
                                                 ].map((item, id) => (
                                                     <div key={id} className="flex gap-6 md:gap-8 group/item">
-                                                        <div className={`w-16 h-16 rounded-2xl ${item.bg} border ${item.border} flex items-center justify-center shrink-0 group-hover/item:scale-110 group-hover/item:bg-white group-hover/item:text-navy transition-all duration-500 shadow-2xl overflow-hidden relative`}>
-                                                            <div className="absolute inset-0 opacity-0 group-hover/item:opacity-100 bg-gradient-to-br from-white to-white/50 transition-opacity" />
-                                                            <item.icon size={32} className={`${item.color} relative z-10 group-hover/item:text-navy transition-colors`} />
+                                                        <div className={`w-16 h-16 rounded-2xl ${item.bg} border ${item.border} flex items-center justify-center shrink-0 group-hover/item:scale-110 group-hover/item:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-500 shadow-2xl relative`}>
+                                                            {item.customIcon}
                                                         </div>
                                                         <div className="flex flex-col justify-center">
-                                                            <span className="text-[12px] md:text-sm font-black tracking-[0.2em] text-gold/60 mb-2 block uppercase font-display">{item.label}</span>
+                                                            <span className="inline-block text-[12px] md:text-sm font-bold tracking-[0.1em] text-white bg-primary px-3 py-1 rounded-md mb-2 uppercase font-display">
+                                                                {item.label}
+                                                            </span>
                                                             {item.isLink ? (
                                                                 <a href={item.href} className="text-xl md:text-2xl font-bold text-white hover:text-gold transition-all block tracking-tight font-display">
                                                                     {item.value}
@@ -293,18 +291,21 @@ const Contact = () => {
                                     transition={{ duration: 0.8 }}
                                     className="lg:col-span-7"
                                 >
-                                    <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.12)] relative overflow-hidden border border-navy/5">
-                                        <div className="absolute top-0 right-0 w-full h-2 bg-gradient-to-r from-gold via-teal to-navy" />
-                                        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/[0.03] rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
-                                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/[0.03] rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
-
-                                        <div className="relative z-10">
-                                            <div className="mb-10">
-                                                <h3 className="text-3xl md:text-4xl font-display font-bold text-navy mb-3">Strategic <span className="text-gradient-gold italic">Submission</span></h3>
-                                                <p className="text-navy/60 text-sm md:text-base font-bold leading-relaxed max-w-xl">
+                                    <div className="bg-white rounded-[2.5rem] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.12)] relative overflow-hidden border-4 border-primary">
+                                        {/* Colored Top Header */}
+                                        <div className="bg-primary p-8 md:p-10 relative overflow-hidden">
+                                            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
+                                            <div className="relative z-10">
+                                                <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-3 italic">Inquiry <span className="text-gold">Form</span></h3>
+                                                <p className="text-white/80 text-sm md:text-base font-bold leading-relaxed max-w-xl">
                                                     Provide your details for a confidential executive consultation. Our experts will process your inquiry with the highest priority.
                                                 </p>
                                             </div>
+                                        </div>
+
+                                        <div className="p-8 md:p-12 relative z-10">
+                                            <div className="absolute top-0 right-0 w-96 h-96 bg-gold/[0.03] rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none" />
+                                            <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal/[0.03] rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
 
                                             <form onSubmit={handleSubmit} className="space-y-6">
                                                 <div className="grid md:grid-cols-2 gap-6">
